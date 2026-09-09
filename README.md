@@ -1,60 +1,34 @@
-# Vesuvius annotation-selection research
+# Vesuvius research: exact evidence preprocessing and archived annotation selection
 
-Executed real-data research on public PHercParis4 annotations and reference surfaces, September 9, 2026. See **[RESULTS.md](RESULTS.md)** for the experiment designs, negative results, statistical caveats and conditional mathematical proof.
+## Current contribution: E2 exact-output fiber preprocessing
 
-## What is demonstrated
+A small, tested improvement to the actual optional `fiber_direction_samples.py` preprocessing stage. It preserves selected coordinates, ordering, direction/confidence bytes and parsed format-2 metadata while reducing CPU selection work and optionally output-serialization memory. **It is not a whole-scroll reconstruction, human-cost, sheet-switch or ink-recovery result.**
 
-| Experiment | Same-budget result | Important boundary |
-|---|---|---|
-| Surface resampling on 40 held-out patches | IVAR 7.4204 versus random 10.7352 native-voxel RMSE: **30.88% lower** | Existing UV/mask supplied; not unknown sheet discovery; tied with spatial coverage |
-| Long-range winding questions, 40 replay splits | IVAR 1.3462 versus random 1.8388 winding RMSE: **26.79% lower** at 128 endpoint labels | Reduced model, not production spiral fitter; human time unmeasured |
-| Spatial relative-collection holdouts, 20 splits | IVAR 1.8555 versus random 2.1506: **13.72% lower** | Shared same/absolute prior evidence remains available |
+- [Results and retained regressions](RESULTS_E2.md)
+- [Ranked research opportunities](RESEARCH_OPPORTUNITIES.md)
+- [Prior-art and novelty audit](PRIOR_ART.md)
+- [Integration and CLI](INTEGRATION.md)
+- [Limits and unpassed gates](LIMITATIONS.md)
+- [Frozen E2 protocol](E2_PROTOCOL.md)
+- [Completed clean-machine reproduction](EXTERNAL_VALIDATION.md)
 
-Information gain performed slightly better than IVAR. The original whole-collection experiment was cost-confounded; a gain-per-point variant failed. Those findings are retained, not hidden.
+The clean CPU run reacquired all 112 original input files by public URL and checked their hashes. All 2,480 configuration comparisons and 155 saved selection arrays match the local execution. Nine unit tests pass, including a 480-case scalar-oracle test. At the primary setting, block selection is faster than upstream on 28/31 cases and a strong sparse-sort baseline on 23/31. Regressions remain recorded.
 
-**No full-scroll reconstruction, new letters, ink-area improvement, actual expert-baseline win, prize acceptance or payment is claimed.**
+At 17,279,232 records in an explicitly repeated-real-batch serialization workload, total process peak RSS was 386.63 versus 97.05 MiB locally and 330.98 versus 39.09 MiB externally. This is a disk-for-memory tradeoff, not 128 independent regions. Small jobs can be slower with streaming.
 
-## External reproduction completed
-
-[Successful separate-CPU execution](https://github.com/Kkb113/research/actions/runs/34338465585): all **18 tests passed**, and all **12 aggregate numerical checks matched**, with maximum aggregate difference `5.5067062021407764e-14`.
-
-- [Verification and environment](results/external_verification.json)
-- [External aggregate results](results/reproduction_summary.json)
-- [Complete external outputs](external_results.zip), including per-case errors and selected query coordinates
-- [Test output](results/tests_after.txt)
-- [Pinned source-data provenance](provenance)
-
-This is computational reproduction on a second machine, not independent AI agents or independent-scroll scientific replication. Parallel numerical workers were used.
-
-## Reproduce
-
-Use Python 3.13; the reference runs used 3.13.5. The complete CPU benchmark does not require PyTorch or CUDA.
-
-```sh
-python -m pip install -r requirements.txt
-python src/acquire.py --root .
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python src/test_research.py
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python src/run_confirmations.py
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python src/analyze.py
+```bash
+python -m pip install -e .
+bash scripts/reproduce_e2.sh
 ```
 
-To audit the archived numerical results without rerunning all fits, execute `src/analyze.py` after data acquisition; it extracts `external_results.zip` when needed. The manifest-checked downloader rejects changed public data instead of silently substituting newer files. The initial acquisition Actions artifacts are temporary; manual reproduction uses committed provenance and public URLs, not those expiring artifacts.
+The manifest is losslessly encoded in `provenance/manifest.parts/*.b64`; acquisition verifies its frozen SHA256 and every original file. Reproduction does not depend on expiring Actions input artifacts. Generated results are written to `e2_results/`.
 
-## Protocol and implementation
+## Earlier annotation-selection work — preserved, not promoted
 
-- [Original protocol](PROTOCOL.md), frozen before its confirmation outcomes
-- [Equal-sized pair protocol](PAIR_PROTOCOL.md), after discovering the cost failure
-- [Long-range confirmation protocol](SPANNING_PROTOCOL.md), after three development pilots
-- `src/winding_replay.py`: reduced field and block covariance updates
-- `src/pair_replay.py`: disjoint adjacent/long-range questions
-- `src/surface_replay.py`: given-UV reference-surface resampling
-- `src/cost_replay.py`: original-point-budget negative control
-- `src/extra_pair_baselines.py`: longest-first and span-matched random diagnostics
-- `src/analyze.py`: conditional spatial-cluster bootstrap intervals
-- `src/test_research.py`: algebra, provenance, disjointness and label-leakage tests
+[RESULTS.md](RESULTS.md) contains the original PHercParis4 reduced-model and reference-surface experiments, conditional proof, cost-confounded result and failed gain-per-point control. Information gain slightly outperformed IVAR; coverage nearly tied IVAR on reference surfaces. Equal endpoint count was not measured human time. The 18 original tests and separate-machine numerical reproduction remain in `src/`, `results/`, `external_results.zip`, and the original [PROTOCOL.md](PROTOCOL.md), [PAIR_PROTOCOL.md](PAIR_PROTOCOL.md), [SPANNING_PROTOCOL.md](SPANNING_PROTOCOL.md).
 
-The published upstream Vesuvius source inspected was pinned to `4accc199a55695ebbefaab4fb6a99faa800fcabf`; it was not modified or run as the production fitter.
+Legacy reproduction uses `pip install -r requirements.txt`, `python src/acquire.py --root .`, `python src/test_research.py`, and `python src/run_confirmations.py` with single-threaded BLAS/OpenMP. The original protocols are intentionally not rewritten after their outcomes.
 
-## Data attribution
+E1 engineering protocols also remain as an audit trail. Their unarchived local source was not recovered; E2 is a new explicitly frozen implementation, not a claimed reproduction of those missing hashes.
 
-Data: **Vesuvius Challenge — CT Scans of Herculaneum Papyri**, Giorgio Angelotti and collaborators; public PHercParis4 curated spiral inputs. [Dataset terms and citation requirements](https://scrollprize.org/data): **CC BY-NC 4.0 unless individual assets specify otherwise**. Third-party data and upstream code are not relicensed by this repository.
+No GPU was provisioned, no qualified annotator study was performed, and no independent AI research agents, upstream acceptance, prize or payment are claimed. New code is MIT; third-party data retain their original terms. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
