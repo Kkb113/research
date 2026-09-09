@@ -1,0 +1,92 @@
+name: Reproduce real-data annotation benchmarks
+on:
+  push:
+    paths: ['.github/workflows/reproduce.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: public-annotation-audit
+          run-id: 34335967805
+          github-token: ${{ github.token }}
+          path: audit
+      - uses: actions/download-artifact@v4
+        with:
+          name: real-surface-patches
+          run-id: 34336322751
+          github-token: ${{ github.token }}
+          path: patches
+      - name: Preserve pinned provenance and validate inputs
+        run: |
+          mkdir -p provenance results
+          cp audit/manifest.json provenance/annotations_manifest.json
+          cp patches/manifest.json provenance/patches_manifest.json
+          python src/test_research.py 2>&1 | tee results/tests_before.txt
+        shell: bash
+      - name: Reproduce full primary and long-range comparisons, including negative cost result
+        run: python src/run_confirmations.py > results/reproduction.log 2>&1
+      - name: Check data and compare local benchmark reference numbers
+        shell: bash
+        run: |
+          set -o pipefail
+          python src/test_research.py 2>&1 | tee results/tests_after.txt
+          python - <<'PY'
+          import json,sys,platform,hashlib,pathlib,numpy,scipy,tifffile
+          p=pathlib.Path('results');s=json.loads((p/'reproduction_summary.json').read_text())
+          expected={
+            'surface_confirm':{'random':10.735150458108137,'coverage':7.448819979240746,'variance':7.565693274746859,'ivar':7.4204301409773965},
+            'winding_confirm':{'random':1.8405594135547942,'information':1.189093793615362,'ivar':1.202412356853976},
+            'pair_spanning_confirm':{'random':1.8387593346798539,'information':1.3322400734905515,'ivar':1.3462072494512474},
+            'pair_spanning_spatial':{'random':2.1505703219703003,'ivar':1.8554591538449714}
+          }
+          checks=[]
+          for dataset,policies in expected.items():
+            for policy,value in policies.items():
+              actual=s[dataset][policy];ok=bool(numpy.isclose(actual,value,rtol=1e-5,atol=1e-7))
+              checks.append(dict(dataset=dataset,policy=policy,local_reference=value,external_result=actual,absolute_difference=abs(actual-value),passed=ok))
+          verification={'environment':{'python':sys.version,'platform':platform.platform(),'numpy':numpy.__version__,'scipy':scipy.__version__,'tifffile':tifffile.__version__},'checks':checks,'all_passed':all(c['passed'] for c in checks),'source_sha256':{str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in pathlib.Path('src').glob('*.py')}}
+          (p/'external_verification.json').write_text(json.dumps(verification,indent=2))
+          print(json.dumps(verification,indent=2))
+          if not verification['all_passed']:raise SystemExit('External numerical reproduction differs from local reference')
+          PY
+      - name: Archive complete external outputs and commit audit artifacts
+        shell: bash
+        run: |
+          python - <<'PY'
+          import pathlib,zipfile
+          with zipfile.ZipFile('external_results.zip','w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+              for f in pathlib.Path('results').rglob('*'):
+                  if f.is_file():archive.write(f,str(f))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add provenance external_results.zip results/reproduction_summary.json results/external_verification.json results/tests_after.txt
+          git diff --cached --quiet || git commit -m 'Record independently executed CPU reproduction and source/data hashes'
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-reproduction
+          path: |
+            results/
+            provenance/
+            src/
+            requirements.txt
+          retention-days: 30
+          if-no-files-found: error
