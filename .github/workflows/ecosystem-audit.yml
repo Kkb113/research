@@ -1,0 +1,50 @@
+name: Vesuvius ecosystem audit
+on:
+  push:
+    paths: ['.github/workflows/ecosystem-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Acquire bounded public research sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import urllib.request,json,pathlib,hashlib,concurrent.futures,os
+          out=pathlib.Path('ecosystem');out.mkdir()
+          commit='4accc199a55695ebbefaab4fb6a99faa800fcabf'
+          def read(url, cap=12000000):
+              headers={'User-Agent':'Vesuvius-research-audit'}
+              if url.startswith('https://api.github.com/'): headers['Authorization']='Bearer '+os.environ['GH_TOKEN']
+              with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=40) as r:
+                  data=r.read(cap+1)
+              if len(data)>cap: raise ValueError('size cap')
+              return data
+          tree=json.loads(read(f'https://api.github.com/repos/ScrollPrize/villa/git/trees/{commit}?recursive=1'))
+          (out/'tree.json').write_text(json.dumps(tree))
+          chosen=[x for x in tree['tree'] if x['type']=='blob' and x.get('size',0)<400000 and (x['path'].startswith('spiral-fitting/') or x['path'].startswith('volume-cartographer/docs/') or x['path'].startswith('volume-cartographer/python/')) and not x['path'].endswith('uv.lock')]
+          manifest=[]
+          def fetch(x):
+              url=f'https://raw.githubusercontent.com/ScrollPrize/villa/{commit}/'+x['path']
+              try:
+                  b=read(url);p=out/'villa'/x['path'];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+                  return {'path':x['path'],'url':url,'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)}
+              except Exception as e:return {'path':x['path'],'error':str(e)}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool: manifest=list(pool.map(fetch,chosen))
+          (out/'source_manifest.json').write_text(json.dumps({'upstream':commit,'files':manifest},indent=2))
+          for key,url in [('commits','https://api.github.com/repos/ScrollPrize/villa/commits?per_page=40'),('issues','https://api.github.com/repos/ScrollPrize/villa/issues?state=open&per_page=100'),('pulls','https://api.github.com/repos/ScrollPrize/villa/pulls?state=all&per_page=50'),('scroll_inventory','https://dl.ash2txt.org/datasets/spiral_datasets/')]:
+              try:(out/(key+'.json' if key!='scroll_inventory' else key+'.html')).write_bytes(read(url))
+              except Exception as e:(out/(key+'.error')).write_text(str(e))
+          print('acquired',sum('sha256' in x for x in manifest),'files; errors',sum('error' in x for x in manifest))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecosystem-audit
+          path: ecosystem/
+          retention-days: 14
