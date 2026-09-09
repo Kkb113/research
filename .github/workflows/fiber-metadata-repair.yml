@@ -1,0 +1,31 @@
+name: Restore exact fiber metadata
+on:
+  push:
+    paths: ['.github/workflows/fiber-metadata-repair.yml']
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          python - <<'PY'
+          import urllib.request,pathlib,hashlib,json
+          root=pathlib.Path('metadata');root.mkdir()
+          datasets=[('PHercParis4','20260411134726','d74cca79'),('PHerc0332','20251211183505','84afaf75'),('PHerc1299','20260309130042','aac02eb8'),('PHerc0139','20260102150214','92481a4c')]
+          records=[]
+          for scroll,scan,tag in datasets:
+              for field in ['presence','nx','ny']:
+                  url=f'https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/{scroll}/representations/predictions/fibers/{scan}-fibers-20260801084232-L1/{scroll}-{scan}-las-sd1-{tag}_{field}.ome.zarr/3/.zarray'
+                  with urllib.request.urlopen(url,timeout=60) as r:b=r.read()
+                  p=root/scroll/field/'.zarray';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+                  records.append({'path':str(p.relative_to(root)),'url':url,'sha256':hashlib.sha256(b).hexdigest()})
+          (root/'repair_manifest.json').write_text(json.dumps(records,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fiber-array-metadata
+          path: metadata/
+          include-hidden-files: true
+          retention-days: 14
