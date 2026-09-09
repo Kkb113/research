@@ -1,0 +1,51 @@
+name: Evidence and prior-art inventory
+on:
+  push:
+    paths: ['.github/workflows/evidence-inventory.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory public sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import urllib.request,urllib.parse,json,pathlib,hashlib,re,concurrent.futures,os
+          out=pathlib.Path('inventory');out.mkdir()
+          commit='4accc199a55695ebbefaab4fb6a99faa800fcabf'
+          def read(url,cap=10000000):
+              h={'User-Agent':'Vesuvius-research-public-audit'}
+              if url.startswith('https://api.github.com/'):h['Authorization']='Bearer '+os.environ['GH_TOKEN']
+              with urllib.request.urlopen(urllib.request.Request(url,headers=h),timeout=40) as r:b=r.read(cap+1)
+              if len(b)>cap:raise ValueError('cap exceeded')
+              return b
+          manifest=[]
+          def save(name,url):
+              try:
+                  b=read(url);p=out/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+                  return {'path':name,'url':url,'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)}
+              except Exception as e:return {'path':name,'url':url,'error':str(e)}
+          base='https://dl.ash2txt.org/datasets/spiral_datasets/'
+          index=read(base).decode();scrolls=re.findall(r'href="(PHerc[^/]+/)"',index)
+          jobs=[('scrolls/'+s[:-1]+'.html',base+s) for s in scrolls]
+          repos=['pscamillo/constraint-gauge','pscamillo/winding-ruler','Nicodol/spiralcheck','aviad12g/tifxyz-doctor','DomRusso2/sheetcheck','joe-carr-data/windcheck','Hob3rMallow/scrollfiesta_public','pmh47/spiral-fitting','axiosdevs/herculaneum-scroll-tools']
+          for repo in repos:
+              jobs += [('prior/'+repo.replace('/','_')+'.json','https://api.github.com/repos/'+repo+'/readme'),('prior/'+repo.replace('/','_')+'_head.json','https://api.github.com/repos/'+repo+'/commits?per_page=1')]
+          for path in ['scrollprize.org/docs/20_community_projects.md','scrollprize.org/docs/02_data_datasets.md','vesuvius/src/vesuvius/install/configs/scrolls.yaml','volume-cartographer/scripts/get_fiber_directions.py','spiral-fitting/pyproject.toml']:
+              jobs.append(('upstream/'+path,f'https://raw.githubusercontent.com/ScrollPrize/villa/{commit}/'+path))
+          jobs += [('fiber_history.json','https://api.github.com/repos/ScrollPrize/villa/commits?path=spiral-fitting/fiber_direction_samples.py&per_page=10'),('s3_root.xml','https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/?list-type=2&delimiter=/')]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as p:manifest=list(p.map(lambda t:save(*t),jobs))
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          print(json.dumps(manifest,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidence-inventory
+          path: inventory/
+          retention-days: 14
