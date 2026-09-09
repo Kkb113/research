@@ -1,0 +1,62 @@
+{
+  "retrieved_utc": "2026-09-09T09:39:55.767588+00:00",
+  "files": [
+    {
+      "name": "abs_winding.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/abs_winding.json",
+      "last_modified": "Wed, 17 Jun 2026 03:30:35 GMT",
+      "bytes": 20022,
+      "sha256": "4e566731f7cbaf8f5ec843de687b3f72f4a784c40b587ebbaf544550902172c1",
+      "top_type": "dict",
+      "top_length": 2,
+      "keys": [
+        "collections",
+        "vc_pointcollections_json_version"
+      ]
+    },
+    {
+      "name": "relative_windings.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/relative_windings.json",
+      "last_modified": "Sat, 20 Jun 2026 02:31:30 GMT",
+      "bytes": 773507,
+      "sha256": "a3243511d4eb91387a9b32f4dbff11514b08c3ae36e9b2a2b8222607b4883ac1",
+      "top_type": "dict",
+      "top_length": 2,
+      "keys": [
+        "collections",
+        "vc_pointcollections_json_version"
+      ]
+    },
+    {
+      "name": "same_windings.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/same_windings.json",
+      "last_modified": "Fri, 19 Jun 2026 04:48:36 GMT",
+      "bytes": 1695752,
+      "sha256": "d9be52c5ebb42853f75f235241cbfd159738f6f34468bcd182523bc91dc91048",
+      "top_type": "dict",
+      "top_length": 2,
+      "keys": [
+        "collections",
+        "vc_pointcollections_json_version"
+      ]
+    },
+    {
+      "name": "umbilicus.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/umbilicus.json",
+      "last_modified": "Sun, 24 May 2026 23:50:33 GMT",
+      "bytes": 12387,
+      "sha256": "c5f30b0d135c1d333f8170e592079a3d5a636e0071c0dcce560eecebb0ee2602",
+      "top_type": "dict",
+      "top_length": 2,
+      "keys": [
+        "control_points",
+        "metadata"
+      ]
+    },
+    {
+      "name": "README.md",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/README.md",
+      "error": "<HTTPError 404: 'Not Found'>"
+    }
+  ]
+}

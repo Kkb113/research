@@ -1,0 +1,1218 @@
+{
+  "retrieved_utc": "2026-09-09T09:43:42.517807+00:00",
+  "selection": "lowest 48 SHA256(vesuvius-2026-09-09: + directory_name_with_slash)",
+  "files": [
+    {
+      "path": "band-seed3848231-20260729-172926-252.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3848231-20260729-172926-252.tifxyz/meta.json",
+      "bytes": 3366,
+      "sha256": "9976da9fb4215795995689d4aebd31faae98473ae14ac311bb31f986de22a47f"
+    },
+    {
+      "path": "band-seed3848231-20260729-172926-252.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3848231-20260729-172926-252.tifxyz/y.tif",
+      "bytes": 25384,
+      "sha256": "d6b31724df60c7be60f6bebb4a65b1ab6c883534c03e41f391d9eb1e541feb85"
+    },
+    {
+      "path": "band-seed3848231-20260729-172926-252.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3848231-20260729-172926-252.tifxyz/x.tif",
+      "bytes": 25384,
+      "sha256": "b2cc0dee462539ca2f5f2f687abf47897741963bb5fba6a40afbe4d27b36b2f2"
+    },
+    {
+      "path": "band-seed3848231-20260729-172926-252.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3848231-20260729-172926-252.tifxyz/z.tif",
+      "bytes": 25384,
+      "sha256": "68faea5e406e55f399f1285fb0c37896e620ed887a3797528e3e159ce8299d65"
+    },
+    {
+      "path": "band-seed11989332-20260729-175345-828.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11989332-20260729-175345-828.tifxyz/meta.json",
+      "bytes": 3162,
+      "sha256": "14485f2be3fd9ba4582f96e4f252cce4bd5fbaa2dec362d5e769ec55158a8a5c"
+    },
+    {
+      "path": "band-seed11989332-20260729-175345-828.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11989332-20260729-175345-828.tifxyz/z.tif",
+      "bytes": 3872,
+      "sha256": "8548997cf8a1378b6f268171070cdf86fcc2484c09ba917f2e5784077d2455ac"
+    },
+    {
+      "path": "band-seed11989332-20260729-175345-828.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11989332-20260729-175345-828.tifxyz/x.tif",
+      "bytes": 3872,
+      "sha256": "6fab21e633cb8cb9799ef7b9eca840e6560df48ee6ea1255c27126a104dbd855"
+    },
+    {
+      "path": "band-seed11989332-20260729-175345-828.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11989332-20260729-175345-828.tifxyz/y.tif",
+      "bytes": 3872,
+      "sha256": "c49347345481f1d0741980dedc6c1653d49b5237ab68a33fe138907055f6edb5"
+    },
+    {
+      "path": "band-seed2444054-20260729-235455-712.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2444054-20260729-235455-712.tifxyz/meta.json",
+      "bytes": 3372,
+      "sha256": "3d70e8e7b2ee3d6816e21ab42b95b50bf0a7ef1b46611af0789c24918b2b9bc3"
+    },
+    {
+      "path": "band-seed2444054-20260729-235455-712.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2444054-20260729-235455-712.tifxyz/y.tif",
+      "bytes": 32144,
+      "sha256": "7b01ea392234522cf17fd418dfa33935ded48da116f15a2927ca07ec6da432ea"
+    },
+    {
+      "path": "band-seed2444054-20260729-235455-712.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2444054-20260729-235455-712.tifxyz/x.tif",
+      "bytes": 32144,
+      "sha256": "688e37fdc02a26caeb7d9bba86dd68860bf07b65a5764a476e25c9df1c67e96e"
+    },
+    {
+      "path": "band-seed2444054-20260729-235455-712.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2444054-20260729-235455-712.tifxyz/z.tif",
+      "bytes": 32144,
+      "sha256": "4478c3226d56a52a7a590edcd4952993a32700699f1326262b843e9804c706ef"
+    },
+    {
+      "path": "band-seed8071635-20260729-231411-664.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8071635-20260729-231411-664.tifxyz/z.tif",
+      "bytes": 9008,
+      "sha256": "31e3a3320a4473dd59d91e29a2092409a83ef17d4caf880b9bf2b30d462cd8fd"
+    },
+    {
+      "path": "band-seed8071635-20260729-231411-664.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8071635-20260729-231411-664.tifxyz/x.tif",
+      "bytes": 9008,
+      "sha256": "b02237bc0382456cb34b2a5a68a0132c9efcf84bbe21cb79d465ca57a49b626e"
+    },
+    {
+      "path": "band-seed8071635-20260729-231411-664.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8071635-20260729-231411-664.tifxyz/y.tif",
+      "bytes": 9008,
+      "sha256": "f5d4ad2650b375ddd1ee50e06796e3368aac6c096370fcef806f798b3fee6a85"
+    },
+    {
+      "path": "band-seed8071635-20260729-231411-664.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8071635-20260729-231411-664.tifxyz/meta.json",
+      "bytes": 3195,
+      "sha256": "1d9e22fe1ab31bfa9374bdf140a6d798ac607370f752d11e0eaca6f848db9a24"
+    },
+    {
+      "path": "band-seed7421220-20260729-183712-108.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7421220-20260729-183712-108.tifxyz/x.tif",
+      "bytes": 5520,
+      "sha256": "2f968dd795cba2d455b6f2384e965e01b0bb32922d3c9b65fb74698832e6fc51"
+    },
+    {
+      "path": "band-seed7421220-20260729-183712-108.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7421220-20260729-183712-108.tifxyz/y.tif",
+      "bytes": 5520,
+      "sha256": "8c3325393db7d83a344d70ae14c7f61dafa78d667ec9e5518090fc0684d2242e"
+    },
+    {
+      "path": "band-seed7421220-20260729-183712-108.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7421220-20260729-183712-108.tifxyz/meta.json",
+      "bytes": 3148,
+      "sha256": "6a8722ef27cc98ea3b221589c1e0c6221c147ca6bbe7cae39f92bf8a640ec32d"
+    },
+    {
+      "path": "band-seed7421220-20260729-183712-108.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7421220-20260729-183712-108.tifxyz/z.tif",
+      "bytes": 5520,
+      "sha256": "926d5bd7b85f0d274a97998cc09f0030130b79b2c20add9fea5457841760cdb5"
+    },
+    {
+      "path": "band-seed2729308-20260729-202440-523.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2729308-20260729-202440-523.tifxyz/z.tif",
+      "bytes": 3088,
+      "sha256": "b70aa7ed15e7942fd2bc9780483ad99f515435e712a1e94b01a89a0dd2289ab4"
+    },
+    {
+      "path": "band-seed2729308-20260729-202440-523.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2729308-20260729-202440-523.tifxyz/y.tif",
+      "bytes": 3088,
+      "sha256": "ed5d5737abc109b02048c58544e514ad57ad9c4eff435bc43c9e6b9b7668f29d"
+    },
+    {
+      "path": "band-seed2729308-20260729-202440-523.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2729308-20260729-202440-523.tifxyz/x.tif",
+      "bytes": 3088,
+      "sha256": "7c455e387ea701ef0d6f3cec8cff04f2e2c0d6b2efe072b18103387120883a31"
+    },
+    {
+      "path": "band-seed2729308-20260729-202440-523.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2729308-20260729-202440-523.tifxyz/meta.json",
+      "bytes": 3134,
+      "sha256": "42a5535dfd7994d6226e684d5a8daed7714a91c8a23c80391244f3cc45440fd1"
+    },
+    {
+      "path": "band-seed807217-20260729-164854-298.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed807217-20260729-164854-298.tifxyz/x.tif",
+      "bytes": 6392,
+      "sha256": "fbdd8773665e322f775e93dbac9f1927e8a2b6d6afb096488efe7a532f2d66e2"
+    },
+    {
+      "path": "band-seed807217-20260729-164854-298.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed807217-20260729-164854-298.tifxyz/y.tif",
+      "bytes": 6392,
+      "sha256": "5c24e87570a3854cb958fdab7f0ec9d50db789b6e165460d653bbdcde3bffb56"
+    },
+    {
+      "path": "band-seed807217-20260729-164854-298.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed807217-20260729-164854-298.tifxyz/z.tif",
+      "bytes": 6392,
+      "sha256": "bb0b0ce7a270b8976e4f357e37f154a04a353295c9615d0c0bb2f82438a25e98"
+    },
+    {
+      "path": "band-seed807217-20260729-164854-298.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed807217-20260729-164854-298.tifxyz/meta.json",
+      "bytes": 3197,
+      "sha256": "28efefbbfcc4ea7559efd1950e91508cb9d16be718414ed7fa9dc03b5c1573db"
+    },
+    {
+      "path": "band-seed9869852-20260729-210754-802.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9869852-20260729-210754-802.tifxyz/meta.json",
+      "bytes": 3095,
+      "sha256": "4116f90a0647fb19c8b4d71c8de4c8b674904edf45d8c69eb4f912502601ee10"
+    },
+    {
+      "path": "band-seed9869852-20260729-210754-802.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9869852-20260729-210754-802.tifxyz/y.tif",
+      "bytes": 2560,
+      "sha256": "d1cb6e61611f71f37325d0e1f90f7d503fdf249574fad1a1b571d611eead9dc1"
+    },
+    {
+      "path": "band-seed9869852-20260729-210754-802.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9869852-20260729-210754-802.tifxyz/x.tif",
+      "bytes": 2560,
+      "sha256": "a10e2ed2358b7b1d78bbc3d3f95cb7bee77cd91c2ad5322ad5fa847d7a6c6304"
+    },
+    {
+      "path": "band-seed9869852-20260729-210754-802.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9869852-20260729-210754-802.tifxyz/z.tif",
+      "bytes": 2560,
+      "sha256": "efaeaf6913b03a08a85ee954bf55b8287d21f905522d99b43c01e0a7b18e81d3"
+    },
+    {
+      "path": "band-seed3452430-20260729-203433-271.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3452430-20260729-203433-271.tifxyz/z.tif",
+      "bytes": 5132,
+      "sha256": "a6437f8bded4caf434fc2f4aaf7fb393a7df85dc7ddbc088ea4b42f1b2a657e7"
+    },
+    {
+      "path": "band-seed3452430-20260729-203433-271.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3452430-20260729-203433-271.tifxyz/y.tif",
+      "bytes": 5132,
+      "sha256": "d9504ca57cab4a6a6156adb5302e789cafba0d27efeb795658e494636d7bdf46"
+    },
+    {
+      "path": "band-seed3452430-20260729-203433-271.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3452430-20260729-203433-271.tifxyz/meta.json",
+      "bytes": 3172,
+      "sha256": "8d9bf9de5d14086096d5dc47ab0520e457d8b73073664d816d722de76fc2c74a"
+    },
+    {
+      "path": "band-seed3452430-20260729-203433-271.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3452430-20260729-203433-271.tifxyz/x.tif",
+      "bytes": 5132,
+      "sha256": "b8e338a358634c03db767068a103c7917e8baa3bfc3bf55a229ce5b150c2faad"
+    },
+    {
+      "path": "auto_grown_20260421142320926_region_000/mask.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260421142320926_region_000/mask.tif",
+      "bytes": 8574,
+      "sha256": "17e92c3166f5c71c297df77a91c0a177ac1e57e532f4b48b43e20e5a958c52fc"
+    },
+    {
+      "path": "auto_grown_20260421142320926_region_000/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260421142320926_region_000/x.tif",
+      "bytes": 33890,
+      "sha256": "b3e01798e57f9212e320c09b3c0a74fda9dc9d9e32ae57da0ab32337e841b01c"
+    },
+    {
+      "path": "auto_grown_20260421142320926_region_000/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260421142320926_region_000/meta.json",
+      "bytes": 19705,
+      "sha256": "23af41491d674c97393bbcf726047bcb80e405549d014ffe7c23c7803f538759"
+    },
+    {
+      "path": "auto_grown_20260421142320926_region_000/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260421142320926_region_000/z.tif",
+      "bytes": 33890,
+      "sha256": "3d1f894aa3e474eaea5d0b3f6bbda2ed0e1e9887796d7719b43fcd0308a533cd"
+    },
+    {
+      "path": "auto_grown_20260421142320926_region_000/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260421142320926_region_000/y.tif",
+      "bytes": 33890,
+      "sha256": "ad6164ec3c1531cc72b41ad15146c5991ad919c5f742c9c13568d1ff6fbd2ba3"
+    },
+    {
+      "path": "band-seed6931376-20260729-175755-787.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6931376-20260729-175755-787.tifxyz/meta.json",
+      "bytes": 3337,
+      "sha256": "a6952a6a71cfc099f3175baa48017285e0f090ff39b1f26d587f45aee9b6e0e9"
+    },
+    {
+      "path": "band-seed6931376-20260729-175755-787.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6931376-20260729-175755-787.tifxyz/y.tif",
+      "bytes": 23204,
+      "sha256": "92360a6b3a04ed8d35962237e026003278746ae09248aa74260abfdb4a78d5c0"
+    },
+    {
+      "path": "band-seed6931376-20260729-175755-787.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6931376-20260729-175755-787.tifxyz/z.tif",
+      "bytes": 23204,
+      "sha256": "55d3642c3f7956dc32b0a2f026ca8338ff725e35ce1637af0d924918bf0bbda1"
+    },
+    {
+      "path": "band-seed6931376-20260729-175755-787.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6931376-20260729-175755-787.tifxyz/x.tif",
+      "bytes": 23204,
+      "sha256": "23a80751164b955ceeb64ef4b8fcbaad2d9e0d2d87f5f9f7d5ae4c094ce02493"
+    },
+    {
+      "path": "band-seed637813-20260729-181445-391.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed637813-20260729-181445-391.tifxyz/meta.json",
+      "bytes": 3334,
+      "sha256": "4cfb1da65123162971e3b85890f7e80694fdce50a95c0612f9711cc9c95dec72"
+    },
+    {
+      "path": "band-seed637813-20260729-181445-391.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed637813-20260729-181445-391.tifxyz/x.tif",
+      "bytes": 21352,
+      "sha256": "a1d1d233c7105430ee58c75cf214e9705a6695bfcce979548a802bab050fee24"
+    },
+    {
+      "path": "band-seed637813-20260729-181445-391.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed637813-20260729-181445-391.tifxyz/z.tif",
+      "bytes": 21352,
+      "sha256": "0e3040d0c64aa7e38a6b357996655cf0f950a78e02f102430789815feb41b0fd"
+    },
+    {
+      "path": "band-seed637813-20260729-181445-391.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed637813-20260729-181445-391.tifxyz/y.tif",
+      "bytes": 21352,
+      "sha256": "d46bebadb809efd06ab0847bf2f0cb3002758f30a7142a6c050ede915260d52c"
+    },
+    {
+      "path": "band-seed17588106-20260729-162059-261.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17588106-20260729-162059-261.tifxyz/y.tif",
+      "bytes": 6712,
+      "sha256": "f5f05ecf68eff17937853219fe53f8f4742371eae8da3f744fd3e8cc190c4314"
+    },
+    {
+      "path": "band-seed17588106-20260729-162059-261.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17588106-20260729-162059-261.tifxyz/x.tif",
+      "bytes": 6712,
+      "sha256": "34d2a134edd0e07c54b5677edbbf8fe199dc1ded3022540b777cf7626b2de751"
+    },
+    {
+      "path": "band-seed17588106-20260729-162059-261.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17588106-20260729-162059-261.tifxyz/meta.json",
+      "bytes": 3252,
+      "sha256": "e674989eddb821eb5388f57942ed33ec4991630489f6f2496ff602dea90219cf"
+    },
+    {
+      "path": "band-seed17588106-20260729-162059-261.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17588106-20260729-162059-261.tifxyz/z.tif",
+      "bytes": 6712,
+      "sha256": "498d888b53410526f7bb2e35dc97866fdaf786f077fc1a4509a7f3bb6cb120ef"
+    },
+    {
+      "path": "band-seed9482711-20260729-162020-412.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9482711-20260729-162020-412.tifxyz/x.tif",
+      "bytes": 7184,
+      "sha256": "9b480e5fc2e81fbec0a333641b5456e893859384db5cab38eaf1ff89bdc56156"
+    },
+    {
+      "path": "band-seed9482711-20260729-162020-412.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9482711-20260729-162020-412.tifxyz/meta.json",
+      "bytes": 3296,
+      "sha256": "01952b7757246daa51f707c73d68625595b893dace1d86836f66eafc0cafb07d"
+    },
+    {
+      "path": "band-seed9482711-20260729-162020-412.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9482711-20260729-162020-412.tifxyz/z.tif",
+      "bytes": 7184,
+      "sha256": "941e79a67541a9abeee6f02a30de26bf5d4f12067b51e89b8fb66d5fd2d12435"
+    },
+    {
+      "path": "band-seed9482711-20260729-162020-412.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed9482711-20260729-162020-412.tifxyz/y.tif",
+      "bytes": 7184,
+      "sha256": "03b6135e76b311b0e30caebca27d60d805a52442caf32bb5b6869c7d8e863c59"
+    },
+    {
+      "path": "band-seed3389985-20260729-191858-714.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3389985-20260729-191858-714.tifxyz/meta.json",
+      "bytes": 3104,
+      "sha256": "7d12e18d0605fbbd2147c86b5ebe60962195e091d6011cebfba89a064f888716"
+    },
+    {
+      "path": "band-seed3389985-20260729-191858-714.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3389985-20260729-191858-714.tifxyz/z.tif",
+      "bytes": 2672,
+      "sha256": "0d5699fb8a4737e2c3a9b1c617ec1451d6236e300023391b8488a9630c1ebd03"
+    },
+    {
+      "path": "band-seed3389985-20260729-191858-714.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3389985-20260729-191858-714.tifxyz/x.tif",
+      "bytes": 2672,
+      "sha256": "812969715e6636de3efa3278fd153a53d2cfcea4cdad588fb41ff1e9c81ba9c2"
+    },
+    {
+      "path": "band-seed3389985-20260729-191858-714.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3389985-20260729-191858-714.tifxyz/y.tif",
+      "bytes": 2672,
+      "sha256": "34b12b20bd48986b045cc179905be1fb1a7e34075cb27c49ab3aa45e433a8ba9"
+    },
+    {
+      "path": "band-seed19142392-20260729-163254-423.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19142392-20260729-163254-423.tifxyz/meta.json",
+      "bytes": 3135,
+      "sha256": "bc0258ab7da2a39b0d0846fde02c78c69f2892fe120f7848b08382067816a4fd"
+    },
+    {
+      "path": "band-seed19142392-20260729-163254-423.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19142392-20260729-163254-423.tifxyz/x.tif",
+      "bytes": 5432,
+      "sha256": "e5007fdc92b2b16c53117858ee01a8359cd64bdb48170d7d0a239f77f93f22c8"
+    },
+    {
+      "path": "band-seed19142392-20260729-163254-423.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19142392-20260729-163254-423.tifxyz/y.tif",
+      "bytes": 5432,
+      "sha256": "96df4a24985e1161da5460d5970afecae05439b521438db1fb724f680876495f"
+    },
+    {
+      "path": "band-seed19142392-20260729-163254-423.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19142392-20260729-163254-423.tifxyz/z.tif",
+      "bytes": 5432,
+      "sha256": "c1945c6c458feb47dfea367f85b62d676e0a3f6b7a6d10bb34b9e575c82cf1d9"
+    },
+    {
+      "path": "band-seed1898318-20260729-191844-535.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1898318-20260729-191844-535.tifxyz/z.tif",
+      "bytes": 2772,
+      "sha256": "ff0b4a977db7b20bb334fc50e36e07dc0dd17e2d0baec08f7e0b5d373242174f"
+    },
+    {
+      "path": "band-seed1898318-20260729-191844-535.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1898318-20260729-191844-535.tifxyz/x.tif",
+      "bytes": 2772,
+      "sha256": "0e859b26bdae3abc7576e20b587acc2569aa16e98014e0eb050756ca11a2c00c"
+    },
+    {
+      "path": "band-seed1898318-20260729-191844-535.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1898318-20260729-191844-535.tifxyz/y.tif",
+      "bytes": 2772,
+      "sha256": "4ea28561d8c383e9ac0d1d88fac9cd8135fd215066a4ed8544216d835b0ccda6"
+    },
+    {
+      "path": "band-seed1898318-20260729-191844-535.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1898318-20260729-191844-535.tifxyz/meta.json",
+      "bytes": 3136,
+      "sha256": "67fc293fa01940cbc56434fcc7fdc9e00a17644ba45ed40ce475248b864b031f"
+    },
+    {
+      "path": "0003_fill_sel_20260512_105100_34/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/0003_fill_sel_20260512_105100_34/y.tif",
+      "bytes": 2686,
+      "sha256": "12bc6d75e0557b49cca0514b79b5a1cbb472c89c179aba5fcb96e60ed60b129b"
+    },
+    {
+      "path": "0003_fill_sel_20260512_105100_34/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/0003_fill_sel_20260512_105100_34/meta.json",
+      "bytes": 551,
+      "sha256": "23b86a364cd1f078c9451ddb953c22b7dce9f8db28c488a3f396f1eff4049254"
+    },
+    {
+      "path": "0003_fill_sel_20260512_105100_34/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/0003_fill_sel_20260512_105100_34/z.tif",
+      "bytes": 2686,
+      "sha256": "d5b84727fe1b4fe3a8d6f470644ce3b6bc04836435b67298f9e10db966dff0ef"
+    },
+    {
+      "path": "0003_fill_sel_20260512_105100_34/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/0003_fill_sel_20260512_105100_34/x.tif",
+      "bytes": 2686,
+      "sha256": "624896e6a2f6215ccdde24d6e33fa6d80978aa4c2ecd84fe3c80a813056221ad"
+    },
+    {
+      "path": "auto_grown_20260521161130783_sel_20260521_161535_22/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260521161130783_sel_20260521_161535_22/meta.json",
+      "bytes": 571,
+      "sha256": "5075f96978e80f8267f7b4191757ed9c89a16ee59fc217e2f86173881869ec7b"
+    },
+    {
+      "path": "auto_grown_20260521161130783_sel_20260521_161535_22/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260521161130783_sel_20260521_161535_22/x.tif",
+      "bytes": 3518,
+      "sha256": "e81388c160864395b2d92dc5c7624bbb008a802d42948f03fc23e8dce81c59b1"
+    },
+    {
+      "path": "auto_grown_20260521161130783_sel_20260521_161535_22/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260521161130783_sel_20260521_161535_22/z.tif",
+      "bytes": 3518,
+      "sha256": "a3eb9523dd171740863195c9cef5196d47ae11aaa5774851e8770849c4d17516"
+    },
+    {
+      "path": "auto_grown_20260521161130783_sel_20260521_161535_22/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/auto_grown_20260521161130783_sel_20260521_161535_22/y.tif",
+      "bytes": 3518,
+      "sha256": "9f7f2fa13c793292b7a64743135b4a83a470776bd04ea597604c2dd34f84c795"
+    },
+    {
+      "path": "band-seed13182752-20260729-235650-572.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13182752-20260729-235650-572.tifxyz/z.tif",
+      "bytes": 2672,
+      "sha256": "bae94b5ce64de75942ce567aa9de909587c3ffe11382f03d334b5d544592b8eb"
+    },
+    {
+      "path": "band-seed13182752-20260729-235650-572.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13182752-20260729-235650-572.tifxyz/y.tif",
+      "bytes": 2672,
+      "sha256": "7627ce5216270edcda6646ecd94ab6ea98c9b965b97ccadfc014acbb42f2b567"
+    },
+    {
+      "path": "band-seed13182752-20260729-235650-572.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13182752-20260729-235650-572.tifxyz/meta.json",
+      "bytes": 3120,
+      "sha256": "a3b9d6423b8d3b51dd44bb876343b869b758871294f2a51c80a2de344f943da9"
+    },
+    {
+      "path": "band-seed13182752-20260729-235650-572.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13182752-20260729-235650-572.tifxyz/x.tif",
+      "bytes": 2672,
+      "sha256": "c7a2d6022aeaf2e3c6b301fe6b2b2553b7aaf59a98261a2b0ffcb857574b6d57"
+    },
+    {
+      "path": "band-seed2786715-20260729-224559-253.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2786715-20260729-224559-253.tifxyz/z.tif",
+      "bytes": 6212,
+      "sha256": "8bff70440884994ca4812d8a30f6f53e9aa10fcc396407dccbfe4be1a26252c1"
+    },
+    {
+      "path": "band-seed2786715-20260729-224559-253.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2786715-20260729-224559-253.tifxyz/meta.json",
+      "bytes": 3226,
+      "sha256": "aa04465fffacb3376646d271e76122f6e321e677b67313dff996f0447db40938"
+    },
+    {
+      "path": "band-seed2786715-20260729-224559-253.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2786715-20260729-224559-253.tifxyz/y.tif",
+      "bytes": 6212,
+      "sha256": "577504dacb5950da2205948b59315351e172dba5e2a5c67eb3ac7dd9484c1b13"
+    },
+    {
+      "path": "band-seed2786715-20260729-224559-253.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2786715-20260729-224559-253.tifxyz/x.tif",
+      "bytes": 6212,
+      "sha256": "ada9c85def13637e7d3900151c12eb35650391fa0510df80e1da0eafd13db933"
+    },
+    {
+      "path": "band-seed1402488-20260729-183611-748.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1402488-20260729-183611-748.tifxyz/x.tif",
+      "bytes": 2516,
+      "sha256": "237933df26e774fe2e9bb90289d5bee50c04267d83ca91adbeeca8bd37cf78ea"
+    },
+    {
+      "path": "band-seed1402488-20260729-183611-748.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1402488-20260729-183611-748.tifxyz/y.tif",
+      "bytes": 2516,
+      "sha256": "ae6e5ff88dc5e82d293e0f81458b7c5ea3450a1b73ee62d2758dc79d71f992b9"
+    },
+    {
+      "path": "band-seed1402488-20260729-183611-748.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1402488-20260729-183611-748.tifxyz/meta.json",
+      "bytes": 3091,
+      "sha256": "db5caa935261dc921fa26c9f14d0cf3acdb80f1b35fdd80766cd237e4be33831"
+    },
+    {
+      "path": "band-seed1402488-20260729-183611-748.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1402488-20260729-183611-748.tifxyz/z.tif",
+      "bytes": 2516,
+      "sha256": "b10d0096b846b29c8861ac0f896d51140fac171b0fc047bd7f637467c8e65133"
+    },
+    {
+      "path": "band-seed8124507-20260730-002134-664.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8124507-20260730-002134-664.tifxyz/z.tif",
+      "bytes": 2848,
+      "sha256": "a9ed2085a587f11708c660590d41c617225de31ee1cbc76e8088bf98beddb902"
+    },
+    {
+      "path": "band-seed8124507-20260730-002134-664.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8124507-20260730-002134-664.tifxyz/x.tif",
+      "bytes": 2848,
+      "sha256": "95faf97771404abc84a32f19660db02be91fc7277f65bfcc1b7ab9788fd6b05a"
+    },
+    {
+      "path": "band-seed8124507-20260730-002134-664.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8124507-20260730-002134-664.tifxyz/meta.json",
+      "bytes": 3203,
+      "sha256": "16c955ec965fa68a653e25843d0154031b758e273c971edb6c6dd5177baaa9b6"
+    },
+    {
+      "path": "band-seed8124507-20260730-002134-664.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8124507-20260730-002134-664.tifxyz/y.tif",
+      "bytes": 2848,
+      "sha256": "1dbe8f49165e0e70660e34d0bd5ccf7712c9943304ebbdbeed128057457e457d"
+    },
+    {
+      "path": "band-seed15552304-20260729-163908-997.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed15552304-20260729-163908-997.tifxyz/z.tif",
+      "bytes": 3584,
+      "sha256": "cf5efeec8b6c4eeea515ee6d48f5114dca85c42d56c2b23029a8b1283bd6a6d0"
+    },
+    {
+      "path": "band-seed15552304-20260729-163908-997.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed15552304-20260729-163908-997.tifxyz/x.tif",
+      "bytes": 3584,
+      "sha256": "f81eb549678bf8a72e7f02bfd3c61d4d75c7bb9be2e8105eb948dabccd3355bf"
+    },
+    {
+      "path": "band-seed15552304-20260729-163908-997.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed15552304-20260729-163908-997.tifxyz/y.tif",
+      "bytes": 3584,
+      "sha256": "985a8c0ef83434d0f42b09cb20839cf5048e3e68f489a6465ceb7cf426b4b7f6"
+    },
+    {
+      "path": "band-seed15552304-20260729-163908-997.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed15552304-20260729-163908-997.tifxyz/meta.json",
+      "bytes": 3109,
+      "sha256": "4631a6865916732adca4d942ad1071e04ff0b7829e4c9f618e03d897805eb4ff"
+    },
+    {
+      "path": "band-seed8256799-20260729-173710-333.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8256799-20260729-173710-333.tifxyz/meta.json",
+      "bytes": 3231,
+      "sha256": "3a3dc3313def2402df71a4e4e4605cbcbf765bb54cb459981bbb7c9ea9bbec21"
+    },
+    {
+      "path": "band-seed8256799-20260729-173710-333.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8256799-20260729-173710-333.tifxyz/y.tif",
+      "bytes": 6544,
+      "sha256": "308f49bac9dd13c07ce8f94ec66640fc7c03fe50d5abd2c7cc39380a1fee33e5"
+    },
+    {
+      "path": "band-seed8256799-20260729-173710-333.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8256799-20260729-173710-333.tifxyz/x.tif",
+      "bytes": 6544,
+      "sha256": "dd8cd7e0461df8cea86ec55cbda15b1fa9bf3088bb5281f90e305fefcad48975"
+    },
+    {
+      "path": "band-seed8256799-20260729-173710-333.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed8256799-20260729-173710-333.tifxyz/z.tif",
+      "bytes": 6544,
+      "sha256": "c0e05d62cf5b0d92d1618d6e8254921b3061c6cd3fd630948b5305cd2140e7ed"
+    },
+    {
+      "path": "band-seed6439149-20260729-174004-000.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6439149-20260729-174004-000.tifxyz/x.tif",
+      "bytes": 7968,
+      "sha256": "812801b8af6cfbe675f660d33890071780e43b27482cad28bab50b24c583a626"
+    },
+    {
+      "path": "band-seed6439149-20260729-174004-000.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6439149-20260729-174004-000.tifxyz/z.tif",
+      "bytes": 7968,
+      "sha256": "ae1857d47716122ec852054a9fa14c19645d30c1d380dff22d8b12da637db44f"
+    },
+    {
+      "path": "band-seed6439149-20260729-174004-000.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6439149-20260729-174004-000.tifxyz/y.tif",
+      "bytes": 7968,
+      "sha256": "b954d69e0083b2970970b93778fd47bdf2e8a00df9f157b132f4237798acce95"
+    },
+    {
+      "path": "band-seed6439149-20260729-174004-000.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6439149-20260729-174004-000.tifxyz/meta.json",
+      "bytes": 3202,
+      "sha256": "849003c94a97276c15da1d11bc3c00adf4e152289dcfe569a5106f72fcdeaf39"
+    },
+    {
+      "path": "band-seed18268163-20260729-161147-036.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18268163-20260729-161147-036.tifxyz/meta.json",
+      "bytes": 3261,
+      "sha256": "188582d13cac249cd415606c98c47426233c0978be5de1b0dacc4dbf3024ced4"
+    },
+    {
+      "path": "band-seed18268163-20260729-161147-036.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18268163-20260729-161147-036.tifxyz/x.tif",
+      "bytes": 7312,
+      "sha256": "469489232476eb869a6ab6753d17d3ce2011af65f34296624d713210f6cb0528"
+    },
+    {
+      "path": "band-seed18268163-20260729-161147-036.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18268163-20260729-161147-036.tifxyz/y.tif",
+      "bytes": 7312,
+      "sha256": "c87d6ce73c1f162ad0a0a30ad3da6d31f84553c38081efec6d88729b8c9a04b8"
+    },
+    {
+      "path": "band-seed18268163-20260729-161147-036.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18268163-20260729-161147-036.tifxyz/z.tif",
+      "bytes": 7312,
+      "sha256": "87298b41fe0da22561b869961bb03fdb2cc349b7570fa4ae8424a8fdad45a164"
+    },
+    {
+      "path": "band-seed19526468-20260729-194516-678.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19526468-20260729-194516-678.tifxyz/meta.json",
+      "bytes": 3343,
+      "sha256": "7ccb2c85c82e0a2059ce34644a3984393941506d1f075bf54a07cdbcdf4a30c2"
+    },
+    {
+      "path": "band-seed19526468-20260729-194516-678.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19526468-20260729-194516-678.tifxyz/y.tif",
+      "bytes": 36880,
+      "sha256": "66df74502162146c516b4ffcfc8ab2ae789289df2b2823401be95a6f15021ba4"
+    },
+    {
+      "path": "band-seed19526468-20260729-194516-678.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19526468-20260729-194516-678.tifxyz/z.tif",
+      "bytes": 36880,
+      "sha256": "d4f143cfbb4f124bdf9e4b2884639daa28df8b32e319c4cf08bfabbeafa90dcb"
+    },
+    {
+      "path": "band-seed19526468-20260729-194516-678.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed19526468-20260729-194516-678.tifxyz/x.tif",
+      "bytes": 36880,
+      "sha256": "e43d749f1de49f7f884b1582db8ec7796b438db514aee704621dc922901868a3"
+    },
+    {
+      "path": "band-seed13627835-20260729-160320-528.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13627835-20260729-160320-528.tifxyz/meta.json",
+      "bytes": 3198,
+      "sha256": "04af050ebdf23f573f6d21e064e5bf4896c3babeae27ceb519f4d5378a3554d8"
+    },
+    {
+      "path": "band-seed13627835-20260729-160320-528.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13627835-20260729-160320-528.tifxyz/y.tif",
+      "bytes": 3000,
+      "sha256": "5dc4adf4def0aef2d8b84fab12e3fbd7252a30ec41d2912972b72be3afa1878f"
+    },
+    {
+      "path": "band-seed13627835-20260729-160320-528.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13627835-20260729-160320-528.tifxyz/x.tif",
+      "bytes": 3000,
+      "sha256": "3e49352cc3bf55b88e97c33ef448193aa5fe97ca3af9e5dc73780ed6ee9c987b"
+    },
+    {
+      "path": "band-seed13627835-20260729-160320-528.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed13627835-20260729-160320-528.tifxyz/z.tif",
+      "bytes": 3000,
+      "sha256": "16ac984788b4fff38bf391fe5045e3e40ec5a8fcb9bae024117e79cc28493b4e"
+    },
+    {
+      "path": "band-seed2823796-20260729-162804-830.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2823796-20260729-162804-830.tifxyz/y.tif",
+      "bytes": 4412,
+      "sha256": "e356ef026da9572dc8e064f663cce0cfabf6ed70164fa2d93f0d685544e74c04"
+    },
+    {
+      "path": "band-seed2823796-20260729-162804-830.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2823796-20260729-162804-830.tifxyz/meta.json",
+      "bytes": 3283,
+      "sha256": "519eecd06ce832d429d5dada876d556c97e6450c08ea05a389182b338e6c9b36"
+    },
+    {
+      "path": "band-seed2823796-20260729-162804-830.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2823796-20260729-162804-830.tifxyz/x.tif",
+      "bytes": 4412,
+      "sha256": "c09aa5d418f27ab22174a353c1b358120f7961726d27dac56df0acb72aaf0aed"
+    },
+    {
+      "path": "band-seed2823796-20260729-162804-830.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2823796-20260729-162804-830.tifxyz/z.tif",
+      "bytes": 4412,
+      "sha256": "5d4c2c1e5ca8a8b2f6cf678496bead44c32e8b24d277c2797f45a2cc86f5279f"
+    },
+    {
+      "path": "band-seed4160990-20260729-194512-702.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed4160990-20260729-194512-702.tifxyz/y.tif",
+      "bytes": 5884,
+      "sha256": "cf9b08e7a4627b9a355f3186b85f3f47fdbe06e298ea9e385e0032c911d9b25c"
+    },
+    {
+      "path": "band-seed4160990-20260729-194512-702.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed4160990-20260729-194512-702.tifxyz/x.tif",
+      "bytes": 5884,
+      "sha256": "acc94f38b11c8f437485b04b7060ff08e75ecb345dcc5a5416a0bf5be7acb2ac"
+    },
+    {
+      "path": "band-seed4160990-20260729-194512-702.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed4160990-20260729-194512-702.tifxyz/z.tif",
+      "bytes": 5884,
+      "sha256": "d7bf18f6a08513e36f525b4cc0a411b7483f63741a254ef4a9dce19698099ab1"
+    },
+    {
+      "path": "band-seed4160990-20260729-194512-702.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed4160990-20260729-194512-702.tifxyz/meta.json",
+      "bytes": 3265,
+      "sha256": "423d05e356cb054db19558863fbeed0f7662279de42614ca440c5713f9f9ce1e"
+    },
+    {
+      "path": "band-seed14140837-20260729-204624-540.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14140837-20260729-204624-540.tifxyz/y.tif",
+      "bytes": 3752,
+      "sha256": "21c059daa02defcdf26af655a041533197999770551545a15b60edbda78b8132"
+    },
+    {
+      "path": "band-seed14140837-20260729-204624-540.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14140837-20260729-204624-540.tifxyz/meta.json",
+      "bytes": 3115,
+      "sha256": "bd1b2c2fcfe029271a2c1813885c2cb85e8c96d77b9d1b895243e898e813b21d"
+    },
+    {
+      "path": "band-seed14140837-20260729-204624-540.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14140837-20260729-204624-540.tifxyz/z.tif",
+      "bytes": 3752,
+      "sha256": "19bac8fdc59723bdc6837239b02e39a616c23b5590f0bc8fd9468a542fd7cead"
+    },
+    {
+      "path": "band-seed14140837-20260729-204624-540.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14140837-20260729-204624-540.tifxyz/x.tif",
+      "bytes": 3752,
+      "sha256": "c63957504bf589624d4cc39216f2a20baea975d42ec1479b83f766584ebbc04a"
+    },
+    {
+      "path": "band-seed17230720-20260729-222515-883.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17230720-20260729-222515-883.tifxyz/meta.json",
+      "bytes": 3160,
+      "sha256": "20242c0f7d97cccbb7049955d1efda6161cf5d79254bc7f6827777124891d8d0"
+    },
+    {
+      "path": "band-seed17230720-20260729-222515-883.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17230720-20260729-222515-883.tifxyz/x.tif",
+      "bytes": 3152,
+      "sha256": "ae839f2379cd8f8a4890567b90bd5b40dcbb97a771dee4537215beea0b5ffea7"
+    },
+    {
+      "path": "band-seed17230720-20260729-222515-883.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17230720-20260729-222515-883.tifxyz/z.tif",
+      "bytes": 3152,
+      "sha256": "8617756aacdb8157452b148ad30f894ccbc81c80f51addfbaf8958a5bf2b04d9"
+    },
+    {
+      "path": "band-seed17230720-20260729-222515-883.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed17230720-20260729-222515-883.tifxyz/y.tif",
+      "bytes": 3152,
+      "sha256": "2af6a4df3c99e9c069610401d25d4bd680512144f6ac48d6b5dbe0b8279b8118"
+    },
+    {
+      "path": "band-seed2359289-20260729-160033-312.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2359289-20260729-160033-312.tifxyz/meta.json",
+      "bytes": 3141,
+      "sha256": "e37d1d023324a2754f7d092b8f603a867948f6a6c0602c16930e06b6ea63d9e2"
+    },
+    {
+      "path": "band-seed2359289-20260729-160033-312.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2359289-20260729-160033-312.tifxyz/y.tif",
+      "bytes": 3536,
+      "sha256": "52a0770f30206c5254af929ef382646f59ab6df2bd8f8d7c98586f2c52d9b028"
+    },
+    {
+      "path": "band-seed2359289-20260729-160033-312.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2359289-20260729-160033-312.tifxyz/z.tif",
+      "bytes": 3536,
+      "sha256": "fdb4c3675b985c4a9c744d878e81c8aab38db2a401b44677dc62e9e79ecf3e96"
+    },
+    {
+      "path": "band-seed2359289-20260729-160033-312.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2359289-20260729-160033-312.tifxyz/x.tif",
+      "bytes": 3536,
+      "sha256": "d326a99f83ecffa7d4d41770159e46d0b46467a2c793c224c843d600827c4925"
+    },
+    {
+      "path": "band-seed5610760-20260729-181025-631.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed5610760-20260729-181025-631.tifxyz/z.tif",
+      "bytes": 2324,
+      "sha256": "82503484038cd2bc85a70aad470d629ce5ae64a48fdbeed7c8e80918f0cebd22"
+    },
+    {
+      "path": "band-seed5610760-20260729-181025-631.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed5610760-20260729-181025-631.tifxyz/x.tif",
+      "bytes": 2324,
+      "sha256": "6cad35068538ae8d91c8fbfd1369e204db94fe1429631fb6991926384fb414c0"
+    },
+    {
+      "path": "band-seed5610760-20260729-181025-631.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed5610760-20260729-181025-631.tifxyz/y.tif",
+      "bytes": 2324,
+      "sha256": "a38ea57a3c3ef990afe43da0ebeeea5f2ca500f1036f66fac88dd7483b2a4fd7"
+    },
+    {
+      "path": "band-seed5610760-20260729-181025-631.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed5610760-20260729-181025-631.tifxyz/meta.json",
+      "bytes": 3285,
+      "sha256": "c09d0c6bf4318fd3a6d0c5cb19c7d52b8fc02362ad4ca44edc8afbdd7d48a384"
+    },
+    {
+      "path": "band-seed3715077-20260729-173026-259.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3715077-20260729-173026-259.tifxyz/meta.json",
+      "bytes": 3266,
+      "sha256": "9cece837cb623575b4e58d59488f507a3dcf60367ad4bcee2943248d11fe1c91"
+    },
+    {
+      "path": "band-seed3715077-20260729-173026-259.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3715077-20260729-173026-259.tifxyz/x.tif",
+      "bytes": 17344,
+      "sha256": "4aeaf9ee383fb39d8cd62c43ce610ede3d6872cbd5f59e4b672754b005b92f76"
+    },
+    {
+      "path": "band-seed3715077-20260729-173026-259.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3715077-20260729-173026-259.tifxyz/y.tif",
+      "bytes": 17344,
+      "sha256": "896671d3a72c3c764e2185f2064ca7420a9b19ed7ccadeb129d13a6b8a7b9769"
+    },
+    {
+      "path": "band-seed3715077-20260729-173026-259.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3715077-20260729-173026-259.tifxyz/z.tif",
+      "bytes": 17344,
+      "sha256": "db6887a931d7913b29b612b5aec2fb317a3ce479faa08872434355f3c0848102"
+    },
+    {
+      "path": "band-seed1292756-20260730-001513-409.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1292756-20260730-001513-409.tifxyz/meta.json",
+      "bytes": 3193,
+      "sha256": "185104aade862c3d36b261ef50853f016dca804b7a1ec65ca38e6d1bb30a5925"
+    },
+    {
+      "path": "band-seed1292756-20260730-001513-409.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1292756-20260730-001513-409.tifxyz/y.tif",
+      "bytes": 5420,
+      "sha256": "bbb67f7c399a31a83d6dd080d43b006e848eb8816f382b2fb727d6c8ff765706"
+    },
+    {
+      "path": "band-seed1292756-20260730-001513-409.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1292756-20260730-001513-409.tifxyz/x.tif",
+      "bytes": 5420,
+      "sha256": "3e899c7bcd92a6846d10b52a354084e7378a05195d66dfa2ae0441508e89501c"
+    },
+    {
+      "path": "band-seed1292756-20260730-001513-409.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed1292756-20260730-001513-409.tifxyz/z.tif",
+      "bytes": 5420,
+      "sha256": "02ba89db25f200c475597677e8bf646d85caa6f53cb853dee11aec4ad7301d49"
+    },
+    {
+      "path": "band-seed10152300-20260729-163235-747.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10152300-20260729-163235-747.tifxyz/z.tif",
+      "bytes": 8372,
+      "sha256": "145207e41595b8072606348b8ffa82e76b779d81fa3801854e1adf2183205494"
+    },
+    {
+      "path": "band-seed10152300-20260729-163235-747.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10152300-20260729-163235-747.tifxyz/x.tif",
+      "bytes": 8372,
+      "sha256": "415e4d11ebbe9ad2dfe3aac7e99ecc6dfbb0302a1a571909f7b3d7762d2e68f9"
+    },
+    {
+      "path": "band-seed10152300-20260729-163235-747.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10152300-20260729-163235-747.tifxyz/meta.json",
+      "bytes": 3145,
+      "sha256": "d55459a26630542d8ec2b2c2f56750ee4a23d089b20a1692ec34e96a9816c08f"
+    },
+    {
+      "path": "band-seed10152300-20260729-163235-747.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10152300-20260729-163235-747.tifxyz/y.tif",
+      "bytes": 8372,
+      "sha256": "4c69f7f1dcd56dc55bc2a00ff05e600e3d659947247a2b6b79c7e30d76dda41d"
+    },
+    {
+      "path": "band-seed11756808-20260729-160246-800.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11756808-20260729-160246-800.tifxyz/z.tif",
+      "bytes": 2752,
+      "sha256": "604ff77075b0873e17d49b9b4c40a2448eb3b8649ef4b5f223ece96d524d3a3b"
+    },
+    {
+      "path": "band-seed11756808-20260729-160246-800.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11756808-20260729-160246-800.tifxyz/meta.json",
+      "bytes": 3085,
+      "sha256": "8ebb8146e37a4a920cad035b0b050b99bb7f7fc8488ac625391c710766cde06a"
+    },
+    {
+      "path": "band-seed11756808-20260729-160246-800.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11756808-20260729-160246-800.tifxyz/y.tif",
+      "bytes": 2752,
+      "sha256": "1946add9bbb4a75e3e875abab5b55c3aeba22d8850bb8d756fc958fa6cdbd01b"
+    },
+    {
+      "path": "band-seed11756808-20260729-160246-800.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11756808-20260729-160246-800.tifxyz/x.tif",
+      "bytes": 2752,
+      "sha256": "e6c9ce0edda4ee978e4d655462f63346b63ac336faaccdecb0e1f5c0edefae4d"
+    },
+    {
+      "path": "band-seed14670613-20260729-174139-117.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14670613-20260729-174139-117.tifxyz/z.tif",
+      "bytes": 6992,
+      "sha256": "18f8548ed66039dd574f9872870e753a8ac33fd8c21fd94904d4003cc129f562"
+    },
+    {
+      "path": "band-seed14670613-20260729-174139-117.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14670613-20260729-174139-117.tifxyz/x.tif",
+      "bytes": 6992,
+      "sha256": "a2f3b34aa2152251618f0729b335a4f9eafc4a379ecec3a4a0ea95dd06695adf"
+    },
+    {
+      "path": "band-seed14670613-20260729-174139-117.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14670613-20260729-174139-117.tifxyz/meta.json",
+      "bytes": 3170,
+      "sha256": "54ad91434e2b9ccaca1a128b1dd0e4b387d70b7055e620af90cb73a9ca560c30"
+    },
+    {
+      "path": "band-seed14670613-20260729-174139-117.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed14670613-20260729-174139-117.tifxyz/y.tif",
+      "bytes": 6992,
+      "sha256": "0da71e0c4cda30404a478c22f52fe33e44c67ad73d961efce05b04a2f1d910b5"
+    },
+    {
+      "path": "band-seed18427963-20260729-165456-447.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18427963-20260729-165456-447.tifxyz/y.tif",
+      "bytes": 2540,
+      "sha256": "ef60e0cbcf499680c8371a64b6358e1066dcf168500503521af9e159e50b9fbd"
+    },
+    {
+      "path": "band-seed18427963-20260729-165456-447.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18427963-20260729-165456-447.tifxyz/meta.json",
+      "bytes": 3144,
+      "sha256": "8cee768c16c34717a4de880bdc6c49885fbdefa24b6dc39fbc5040a1310e9751"
+    },
+    {
+      "path": "band-seed18427963-20260729-165456-447.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18427963-20260729-165456-447.tifxyz/z.tif",
+      "bytes": 2540,
+      "sha256": "53e9910b76ca7f786eb3a63b2e0f1298c2abc3c03981e240b57d40ea37868aa0"
+    },
+    {
+      "path": "band-seed18427963-20260729-165456-447.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed18427963-20260729-165456-447.tifxyz/x.tif",
+      "bytes": 2540,
+      "sha256": "28c394367e4a9c53e72699d0ed3b2b4940fefaa7480eb54498135e0104874ba9"
+    },
+    {
+      "path": "band-seed3992890-20260729-152759-076.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3992890-20260729-152759-076.tifxyz/meta.json",
+      "bytes": 3194,
+      "sha256": "ec90c45dd317a371d94f8897f01f37a9549c409eabffc48c3d138e1e88dd07f7"
+    },
+    {
+      "path": "band-seed3992890-20260729-152759-076.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3992890-20260729-152759-076.tifxyz/y.tif",
+      "bytes": 2540,
+      "sha256": "c1062d898e0748bad5284b84eb352ad612f29894b09e912f47ba5d279304df0c"
+    },
+    {
+      "path": "band-seed3992890-20260729-152759-076.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3992890-20260729-152759-076.tifxyz/z.tif",
+      "bytes": 2540,
+      "sha256": "5ca50f744cfe815764fc6645e18ebc5cdcca054675ef166904fbe29193b6cb92"
+    },
+    {
+      "path": "band-seed3992890-20260729-152759-076.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed3992890-20260729-152759-076.tifxyz/x.tif",
+      "bytes": 2540,
+      "sha256": "a3695a579a7ae1f1ebebb734670b7f34ae28ec1d9715feb6558f9e8aa92d3c45"
+    },
+    {
+      "path": "band-seed11605883-20260729-235343-806.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11605883-20260729-235343-806.tifxyz/meta.json",
+      "bytes": 3345,
+      "sha256": "c61733272fa3f4ff62dd0676de971c685d397565ca535929deb4988abd26fe6f"
+    },
+    {
+      "path": "band-seed11605883-20260729-235343-806.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11605883-20260729-235343-806.tifxyz/x.tif",
+      "bytes": 12768,
+      "sha256": "e6e62af67caebb713b583fedd3c3dfa07aa7ce45de007e0a365f94e03e3b2100"
+    },
+    {
+      "path": "band-seed11605883-20260729-235343-806.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11605883-20260729-235343-806.tifxyz/z.tif",
+      "bytes": 12768,
+      "sha256": "878d084bd5a118bd80c1201a0467c71224fc15e19d9d11b4d1dafe7106c9fd34"
+    },
+    {
+      "path": "band-seed11605883-20260729-235343-806.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed11605883-20260729-235343-806.tifxyz/y.tif",
+      "bytes": 12768,
+      "sha256": "a9c2164995344a79c28bd33b7bcd39f8d073ca9bf6020cf861cc1cf66d9ea345"
+    },
+    {
+      "path": "band-seed2609513-20260729-234324-481.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2609513-20260729-234324-481.tifxyz/meta.json",
+      "bytes": 3173,
+      "sha256": "b381eec25342b0d8207682140b19c3fdc11036d006187adca45fa62b4c09288c"
+    },
+    {
+      "path": "band-seed2609513-20260729-234324-481.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2609513-20260729-234324-481.tifxyz/y.tif",
+      "bytes": 8480,
+      "sha256": "06ffff894c1378acf3e5b8d33227e6d95244063efac6c71386fe8cdf995a221d"
+    },
+    {
+      "path": "band-seed2609513-20260729-234324-481.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2609513-20260729-234324-481.tifxyz/x.tif",
+      "bytes": 8480,
+      "sha256": "fc0a0f8eb218dcbec16d8751fcf9b7b0f1b949cfe3f952fee46a657de699497a"
+    },
+    {
+      "path": "band-seed2609513-20260729-234324-481.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed2609513-20260729-234324-481.tifxyz/z.tif",
+      "bytes": 8480,
+      "sha256": "c7ebbacb8b1824d76ce5bfa8972aaeff05bb1df795d5894e3562560fdb5f9e79"
+    },
+    {
+      "path": "band-seed10019879-20260729-200253-928.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10019879-20260729-200253-928.tifxyz/meta.json",
+      "bytes": 3206,
+      "sha256": "c056a16bbed4d42768e6ebfad22337e0ddab372f165aa904d7870ea781a44bb1"
+    },
+    {
+      "path": "band-seed10019879-20260729-200253-928.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10019879-20260729-200253-928.tifxyz/y.tif",
+      "bytes": 6292,
+      "sha256": "6713030ef0c690da49d1857d0597df71eaba6abccf69cdffb1b9ad671d431098"
+    },
+    {
+      "path": "band-seed10019879-20260729-200253-928.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10019879-20260729-200253-928.tifxyz/z.tif",
+      "bytes": 6292,
+      "sha256": "0af06007c62e24086db49d021b4146e3c03fa3e1402a5bf2e25c321642418848"
+    },
+    {
+      "path": "band-seed10019879-20260729-200253-928.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed10019879-20260729-200253-928.tifxyz/x.tif",
+      "bytes": 6292,
+      "sha256": "11db5e1260b537bcf44c2757b6a79501ac7f64916832f2f3141ecf25060c0f19"
+    },
+    {
+      "path": "band-seed6640724-20260730-003928-902.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6640724-20260730-003928-902.tifxyz/y.tif",
+      "bytes": 3984,
+      "sha256": "e4aa329c94c2e652909fa385d46de1b031c0d2f09dcda6d56b4b4ebe202efc25"
+    },
+    {
+      "path": "band-seed6640724-20260730-003928-902.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6640724-20260730-003928-902.tifxyz/z.tif",
+      "bytes": 3984,
+      "sha256": "68edeac101a52004170173d50feb9e8bb9889cbb08085453b14b29ed6e7d60e8"
+    },
+    {
+      "path": "band-seed6640724-20260730-003928-902.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6640724-20260730-003928-902.tifxyz/x.tif",
+      "bytes": 3984,
+      "sha256": "1e76d4989b1b22d0e9907990aef74e40aca3f9fd3b70943a1cdbc01853f98168"
+    },
+    {
+      "path": "band-seed6640724-20260730-003928-902.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed6640724-20260730-003928-902.tifxyz/meta.json",
+      "bytes": 3172,
+      "sha256": "452782765623366f43efae6bb74813c08bbf7b22e5550c89768a9a7e5e6a44e3"
+    },
+    {
+      "path": "band-seed68173-20260729-165951-638.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed68173-20260729-165951-638.tifxyz/y.tif",
+      "bytes": 3672,
+      "sha256": "f18d0ad9299a76a06ca0e8526854f9dd3a3522ccb88fd0d4a36f548d2ec61c07"
+    },
+    {
+      "path": "band-seed68173-20260729-165951-638.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed68173-20260729-165951-638.tifxyz/z.tif",
+      "bytes": 3672,
+      "sha256": "16cc3c49ca72ea94ce15e95f18e94d92c1e29e8995d45f802ada77fb1f02272d"
+    },
+    {
+      "path": "band-seed68173-20260729-165951-638.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed68173-20260729-165951-638.tifxyz/meta.json",
+      "bytes": 3174,
+      "sha256": "ab4cbd757fba12ba40b162e09fa16f0e2cc660ed00f723f2e1047c29c5d91086"
+    },
+    {
+      "path": "band-seed68173-20260729-165951-638.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed68173-20260729-165951-638.tifxyz/x.tif",
+      "bytes": 3672,
+      "sha256": "d4cc714f6c533413bfd650a100d9c0f53958c54010b58998aa831cf25b433175"
+    },
+    {
+      "path": "band-seed7280283-20260729-222407-036.tifxyz/z.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7280283-20260729-222407-036.tifxyz/z.tif",
+      "bytes": 4192,
+      "sha256": "a71fdc0e9786c8692e23666c56f2b5ca98fb8b48be53f18a894dd922b2f806f0"
+    },
+    {
+      "path": "band-seed7280283-20260729-222407-036.tifxyz/y.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7280283-20260729-222407-036.tifxyz/y.tif",
+      "bytes": 4192,
+      "sha256": "682a4ae5d7d791681f0187d3bd31e767882065eea50b2b86846e1e12dae86e10"
+    },
+    {
+      "path": "band-seed7280283-20260729-222407-036.tifxyz/x.tif",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7280283-20260729-222407-036.tifxyz/x.tif",
+      "bytes": 4192,
+      "sha256": "502b6270764437e5789c1448350ce5fbc8b742182118650f21309dde846b95e7"
+    },
+    {
+      "path": "band-seed7280283-20260729-222407-036.tifxyz/meta.json",
+      "url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/band-seed7280283-20260729-222407-036.tifxyz/meta.json",
+      "bytes": 3141,
+      "sha256": "92993f7148c2ffe2984a1ed6dee0a8c82612c4bbb35161197794591dbb90d350"
+    }
+  ],
+  "directory_url": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/",
+  "directory_bytes": 22395184,
+  "directory_sha256": "29f975b1f1615bf7b11e58ec88c77d17c3d7603c4f70e43175e1eb31d65159c2",
+  "directory_count": 89237,
+  "selected": [
+    "band-seed3848231-20260729-172926-252.tifxyz/",
+    "band-seed11989332-20260729-175345-828.tifxyz/",
+    "band-seed2444054-20260729-235455-712.tifxyz/",
+    "band-seed8071635-20260729-231411-664.tifxyz/",
+    "band-seed7421220-20260729-183712-108.tifxyz/",
+    "band-seed2729308-20260729-202440-523.tifxyz/",
+    "band-seed807217-20260729-164854-298.tifxyz/",
+    "band-seed9869852-20260729-210754-802.tifxyz/",
+    "band-seed3452430-20260729-203433-271.tifxyz/",
+    "auto_grown_20260421142320926_region_000/",
+    "band-seed6931376-20260729-175755-787.tifxyz/",
+    "band-seed637813-20260729-181445-391.tifxyz/",
+    "band-seed17588106-20260729-162059-261.tifxyz/",
+    "band-seed9482711-20260729-162020-412.tifxyz/",
+    "band-seed3389985-20260729-191858-714.tifxyz/",
+    "band-seed19142392-20260729-163254-423.tifxyz/",
+    "band-seed1898318-20260729-191844-535.tifxyz/",
+    "0003_fill_sel_20260512_105100_34/",
+    "auto_grown_20260521161130783_sel_20260521_161535_22/",
+    "band-seed13182752-20260729-235650-572.tifxyz/",
+    "band-seed2786715-20260729-224559-253.tifxyz/",
+    "band-seed1402488-20260729-183611-748.tifxyz/",
+    "band-seed8124507-20260730-002134-664.tifxyz/",
+    "band-seed15552304-20260729-163908-997.tifxyz/",
+    "band-seed8256799-20260729-173710-333.tifxyz/",
+    "band-seed6439149-20260729-174004-000.tifxyz/",
+    "band-seed18268163-20260729-161147-036.tifxyz/",
+    "band-seed19526468-20260729-194516-678.tifxyz/",
+    "band-seed13627835-20260729-160320-528.tifxyz/",
+    "band-seed2823796-20260729-162804-830.tifxyz/",
+    "band-seed4160990-20260729-194512-702.tifxyz/",
+    "band-seed14140837-20260729-204624-540.tifxyz/",
+    "band-seed17230720-20260729-222515-883.tifxyz/",
+    "band-seed2359289-20260729-160033-312.tifxyz/",
+    "band-seed5610760-20260729-181025-631.tifxyz/",
+    "band-seed3715077-20260729-173026-259.tifxyz/",
+    "band-seed1292756-20260730-001513-409.tifxyz/",
+    "band-seed10152300-20260729-163235-747.tifxyz/",
+    "band-seed11756808-20260729-160246-800.tifxyz/",
+    "band-seed14670613-20260729-174139-117.tifxyz/",
+    "band-seed18427963-20260729-165456-447.tifxyz/",
+    "band-seed3992890-20260729-152759-076.tifxyz/",
+    "band-seed11605883-20260729-235343-806.tifxyz/",
+    "band-seed2609513-20260729-234324-481.tifxyz/",
+    "band-seed10019879-20260729-200253-928.tifxyz/",
+    "band-seed6640724-20260730-003928-902.tifxyz/",
+    "band-seed68173-20260729-165951-638.tifxyz/",
+    "band-seed7280283-20260729-222407-036.tifxyz/"
+  ]
+}

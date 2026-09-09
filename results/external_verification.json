@@ -1,0 +1,118 @@
+{
+  "environment": {
+    "python": "3.13.5 (main, Jun 12 2025, 03:51:07) [GCC 13.3.0]",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "tifffile": "2026.5.15"
+  },
+  "checks": [
+    {
+      "dataset": "surface_confirm",
+      "policy": "random",
+      "local_reference": 10.735150458108137,
+      "external_result": 10.735150458108082,
+      "absolute_difference": 5.5067062021407764e-14,
+      "passed": true
+    },
+    {
+      "dataset": "surface_confirm",
+      "policy": "coverage",
+      "local_reference": 7.448819979240746,
+      "external_result": 7.448819979240744,
+      "absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "dataset": "surface_confirm",
+      "policy": "variance",
+      "local_reference": 7.565693274746859,
+      "external_result": 7.5656932747468435,
+      "absolute_difference": 1.509903313490213e-14,
+      "passed": true
+    },
+    {
+      "dataset": "surface_confirm",
+      "policy": "ivar",
+      "local_reference": 7.4204301409773965,
+      "external_result": 7.4204301409773965,
+      "absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "dataset": "winding_confirm",
+      "policy": "random",
+      "local_reference": 1.8405594135547942,
+      "external_result": 1.840559413554793,
+      "absolute_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "dataset": "winding_confirm",
+      "policy": "information",
+      "local_reference": 1.189093793615362,
+      "external_result": 1.1890937936153694,
+      "absolute_difference": 7.327471962526033e-15,
+      "passed": true
+    },
+    {
+      "dataset": "winding_confirm",
+      "policy": "ivar",
+      "local_reference": 1.202412356853976,
+      "external_result": 1.2024123568539833,
+      "absolute_difference": 7.327471962526033e-15,
+      "passed": true
+    },
+    {
+      "dataset": "pair_spanning_confirm",
+      "policy": "random",
+      "local_reference": 1.8387593346798539,
+      "external_result": 1.8387593346798774,
+      "absolute_difference": 2.353672812205332e-14,
+      "passed": true
+    },
+    {
+      "dataset": "pair_spanning_confirm",
+      "policy": "information",
+      "local_reference": 1.3322400734905515,
+      "external_result": 1.3322400734905515,
+      "absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "dataset": "pair_spanning_confirm",
+      "policy": "ivar",
+      "local_reference": 1.3462072494512474,
+      "external_result": 1.3462072494512474,
+      "absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "dataset": "pair_spanning_spatial",
+      "policy": "random",
+      "local_reference": 2.1505703219703003,
+      "external_result": 2.1505703219702705,
+      "absolute_difference": 2.9753977059954195e-14,
+      "passed": true
+    },
+    {
+      "dataset": "pair_spanning_spatial",
+      "policy": "ivar",
+      "local_reference": 1.8554591538449714,
+      "external_result": 1.8554591538449832,
+      "absolute_difference": 1.176836406102666e-14,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "source_sha256": {
+    "src/winding_replay.py": "3a797b29d701ec05cec4ada7dd53b94b42fa19b7cbf87f34271c9924ab1eb218",
+    "src/pair_replay.py": "570b38bf2efee80ad769cf278e09932b6cbb8811bd3c0a79003992d3f255ca0e",
+    "src/cost_replay.py": "6ee08c170a01f1f25530f9db9e99e3c8cddbcb52b9bfd3f0a5edf5db11ca3707",
+    "src/surface_replay.py": "3024002b78c5af13b052c6e512f676d142d37e824a0e765a5d6d6ffb6405b2ad",
+    "src/acquire.py": "54215a4fea6ac6a5d10e035bd00a51a11d5755ba45bdc9d18fab9a5567fb4ca7",
+    "src/run_confirmations.py": "096d25454fc3dd5eb5823c4678453b4dc9027478826c015685d2d7df0284b097",
+    "src/test_research.py": "8eb36adbf539a9409112333f7afcdd79db3480536d78a00916c4d789f53cf179",
+    "src/extra_pair_baselines.py": "e56a23e201417dd1fa2396bf94d3008ba760b471fd23f04ab96c6c661f8702c4"
+  }
+}

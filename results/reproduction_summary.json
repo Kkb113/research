@@ -1,0 +1,37 @@
+{
+  "surface_confirm": {
+    "coverage": 7.448819979240744,
+    "ivar": 7.4204301409773965,
+    "random": 10.735150458108082,
+    "variance": 7.5656932747468435
+  },
+  "winding_confirm": {
+    "chronological": 1.5819682878682861,
+    "coverage": 1.8796572956838635,
+    "information": 1.1890937936153694,
+    "ivar": 1.2024123568539833,
+    "random": 1.840559413554793
+  },
+  "pair_spanning_confirm": {
+    "chronological": 2.0944556706286503,
+    "coverage": 2.011715951904545,
+    "information": 1.3322400734905515,
+    "ivar": 1.3462072494512474,
+    "random": 1.8387593346798774
+  },
+  "pair_spanning_spatial": {
+    "chronological": 2.356186952379465,
+    "coverage": 2.2402571208893414,
+    "information": 1.8528695275255873,
+    "ivar": 1.8554591538449832,
+    "random": 2.1505703219702705
+  },
+  "pair_extra_confirm": {
+    "longest": 1.465392175532319,
+    "span_matched_random": 1.419049042491327
+  },
+  "pair_extra_spatial": {
+    "longest": 2.052992684921869,
+    "span_matched_random": 1.9613233890871007
+  }
+}
