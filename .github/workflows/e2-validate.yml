@@ -1,0 +1,66 @@
+name: E2 exact fiber preprocessing validation
+on:
+  push:
+    paths: ['.github/workflows/e2-validate.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned computational dependencies
+        run: |
+          python -m pip install numpy==2.3.5 numcodecs==0.16.5 requests==2.32.5
+      - name: Verify frozen algorithm source
+        run: |
+          python - <<'PY'
+          import hashlib,pathlib
+          expected={'select.py':'64f0523ec1d01eded50904ab62bdfa892c1d8c2f5e8528e71b7f40c0db05f60d','stream.py':'84e842ccc6758517a06bbbad60885ba8b0fc6e7b0f594c98b7b9754fb07091fc','fixtures.py':'380e2dbe29606ac4a2c016467951af50779f3ee03f4f54f78c17bd049f206541'}
+          for name,h in expected.items():
+            p=pathlib.Path('evidence_pipeline')/name
+            assert hashlib.sha256(p.read_bytes()).hexdigest()==h,name
+          PY
+      - name: Reacquire original public sources and verify every hash
+        run: |
+          python scripts/acquire_e2.py
+      - name: Unit and scalar-oracle tests
+        run: |
+          mkdir -p e2_results
+          python -m unittest discover -s tests -v 2>&1 | tee e2_results/tests.txt
+      - name: Complete fixed-corpus selection replay
+        run: |
+          python scripts/validate_selection.py --fixtures e2_data --upstream e2_data/upstream_fiber_direction_samples.py --out e2_results | tee e2_results/selection.log
+      - name: Actual extraction stage and upstream loader
+        run: |
+          python scripts/validate_stage.py --fixtures e2_data --upstream e2_data/upstream_fiber_direction_samples.py --out e2_results/stage | tee e2_results/stage.log
+      - name: Corrected RSS and serialization resource tests
+        run: |
+          python scripts/validate_resources.py --fixtures e2_data --upstream e2_data/upstream_fiber_direction_samples.py --results e2_results | tee e2_results/resources.log
+      - name: Record source snapshot and environment
+        if: always()
+        run: |
+          mkdir -p e2_results
+          python -m pip freeze > e2_results/environment.txt
+          git rev-parse HEAD > e2_results/repository_commit.txt
+          git archive HEAD -o e2_results/source_snapshot.zip
+          python - <<'PY'
+          import json,platform,sys,pathlib
+          pathlib.Path('e2_results/runtime.json').write_text(json.dumps({'python':sys.version,'platform':platform.platform(),'processor':platform.processor()},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2-clean-machine-evidence
+          path: e2_results/
+          include-hidden-files: true
+          retention-days: 30
