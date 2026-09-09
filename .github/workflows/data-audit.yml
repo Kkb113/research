@@ -1,0 +1,55 @@
+name: Public Vesuvius data audit
+on:
+  push:
+    paths:
+      - '.github/workflows/data-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Download small public annotation files and audit provenance
+        shell: bash
+        run: |
+          mkdir -p audit/data
+          python - <<'PY'
+          import urllib.request, json, hashlib, pathlib, datetime
+          root = pathlib.Path('audit')
+          base = 'https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/'
+          names = ['abs_winding.json', 'relative_windings.json', 'same_windings.json', 'umbilicus.json', 'README.md']
+          manifest = {'retrieved_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'files': []}
+          for name in names:
+              entry = {'name': name, 'url': base + name}
+              try:
+                  with urllib.request.urlopen(entry['url'], timeout=60) as response:
+                      raw = response.read(30_000_001)
+                      if len(raw) > 30_000_000: raise ValueError('File exceeds bounded acquisition size')
+                      entry['last_modified'] = response.headers.get('Last-Modified')
+                  (root/'data'/name).write_bytes(raw)
+                  entry.update(bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+                  if name.endswith('.json'):
+                      data = json.loads(raw)
+                      entry['top_type'] = type(data).__name__
+                      entry['top_length'] = len(data)
+                      entry['keys'] = list(data)[:20] if isinstance(data, dict) else None
+                      print('STRUCTURE', name, str(data)[:7000], flush=True)
+              except Exception as exc:
+                  entry['error'] = repr(exc)
+              manifest['files'].append(entry)
+          for name, url in [('directory.html',base), ('upstream_commit.json','https://api.github.com/repos/ScrollPrize/villa/commits/main')]:
+              try:
+                  raw = urllib.request.urlopen(url, timeout=40).read(2_000_000)
+                  (root/name).write_bytes(raw)
+              except Exception as exc: print('EXTRA_ERROR', name, repr(exc))
+          (root/'manifest.json').write_text(json.dumps(manifest, indent=2))
+          print('MANIFEST', json.dumps(manifest, indent=2), flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-annotation-audit
+          path: audit/
+          retention-days: 7
+          if-no-files-found: error
