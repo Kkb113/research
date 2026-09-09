@@ -1,0 +1,40 @@
+name: E2 install and final source smoke test
+on:
+  push:
+    paths: ['.github/workflows/e2-install-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install and exercise packaged entry point
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p smoke
+          python -m pip install -e . 2>&1 | tee smoke/install.txt
+          vesuvius-fiber-patch --help | tee smoke/cli.txt
+          python -m unittest discover -s tests -v 2>&1 | tee smoke/tests.txt
+          python - <<'PY'
+          import base64,gzip,hashlib,pathlib
+          parts=sorted(pathlib.Path('provenance/manifest.parts').glob('*.b64'))
+          data=gzip.decompress(base64.b64decode(''.join(p.read_text().strip() for p in parts)))
+          assert hashlib.sha256(data).hexdigest()=='b4683eb73b8b5756935696c1382edcfba42bb813ab4d0ad56f983aa63ad8bb9f'
+          pathlib.Path('smoke/fiber_manifest.json').write_bytes(data)
+          PY
+          git rev-parse HEAD > smoke/repository_commit.txt
+          git archive HEAD -o smoke/source_snapshot.zip
+          python -m pip freeze > smoke/environment.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2-installed-source
+          path: smoke/
+          retention-days: 30
