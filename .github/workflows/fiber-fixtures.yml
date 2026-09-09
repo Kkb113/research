@@ -1,0 +1,89 @@
+name: Four-scroll fiber fixtures
+on:
+  push:
+    paths: ['.github/workflows/fiber-fixtures.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Acquire manifests and immutable chunk fixtures
+        run: |
+          python - <<'PY'
+          import urllib.request,urllib.parse,json,pathlib,hashlib,concurrent.futures,xml.etree.ElementTree as ET,gzip
+          out=pathlib.Path('fiber_fixtures');out.mkdir()
+          host='https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/'
+          roots={'PHercParis4':'20260411134726','PHerc0332':'20251211183505','PHerc1299':'20260309130042','PHerc0139':'20260102150214'}
+          def read(url,cap=40000000):
+              with urllib.request.urlopen(url,timeout=90) as r:b=r.read(cap+1)
+              if len(b)>cap:raise ValueError('byte cap exceeded '+url)
+              return b
+          def list_keys(prefix,delimiter=None):
+              keys=[];token=None;pages=0
+              while True:
+                  q={'list-type':'2','prefix':prefix}
+                  if delimiter:q['delimiter']=delimiter
+                  if token:q['continuation-token']=token
+                  tree=ET.fromstring(read(host+'?'+urllib.parse.urlencode(q)))
+                  keys.extend(n.text for n in tree.iter() if n.tag.rsplit('}',1)[-1]=='Key')
+                  pages+=1
+                  trunc=next((n.text=='true' for n in tree.iter() if n.tag.rsplit('}',1)[-1]=='IsTruncated'),False)
+                  if not trunc:return keys,pages
+                  if pages>=200:raise ValueError('listing exceeded 200 pages; no sampling-frame change silently allowed')
+                  token=next(n.text for n in tree.iter() if n.tag.rsplit('}',1)[-1]=='NextContinuationToken')
+          def decode_json(b):return json.loads(gzip.decompress(b) if b[:2]==b'\x1f\x8b' else b)
+          def one(item):
+              scroll,scan=item;folder=out/scroll;folder.mkdir();records=[]
+              def save(path,url):
+                  b=read(url);p=folder/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+                  records.append({'path':str(p.relative_to(out)),'url':url,'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)})
+                  return b
+              root=f'{scroll}/representations/predictions/fibers/{scan}-fibers-20260801084232-L1/'
+              keys,_=list_keys(root,'/')
+              found=[]
+              for key in keys:
+                  if key.endswith('.json'):
+                      obj=decode_json(read(host+key))
+                      if isinstance(obj,dict) and 'groups' in obj and 'presence' in obj['groups']:found.append((key,obj))
+              if len(found)!=1:raise ValueError(f'{scroll}: expected unique fiber manifest, got {len(found)}, root keys={keys}')
+              key,m=found[0];manifest_url=host+key;save('manifest.json',manifest_url)
+              urls={n:urllib.parse.urljoin(manifest_url,m['groups'][n]['zarr']).rstrip('/') for n in ('presence','nx','ny')}
+              metas={n:decode_json(save(n+'/.zarray',u+'/.zarray')) for n,u in urls.items()}
+              pre=urllib.parse.urlparse(urls['presence']).path.lstrip('/')+'/'
+              existing,pages=list_keys(pre)
+              sep=metas['presence'].get('dimension_separator','.')
+              pairs=[]
+              for key in existing:
+                  try:idx=tuple(int(x) for x in key[len(pre):].split(sep))
+                  except ValueError:continue
+                  if len(idx)==3:pairs.append((key,idx))
+              pairs.sort(key=lambda t:hashlib.sha256(('vesuvius-e1:'+t[0]).encode()).hexdigest())
+              chosen=pairs[:8]
+              cases=[]
+              for i,(key,idx) in enumerate(chosen):
+                  fields={}
+                  for n in urls:
+                      suffix=metas[n].get('dimension_separator','.').join(map(str,idx))
+                      path=n+'/'+'.'.join(map(str,idx))+'.bin'
+                      save(path,urls[n]+'/'+suffix);fields[n]=str((folder/path).relative_to(out))
+                  cases.append({'id':scroll+'_'+'.'.join(map(str,idx)),'scroll':scroll,'scan':scan,'index':idx,'fields':fields,'role':'development' if scroll=='PHercParis4' and i==0 else 'confirmation'})
+              return {'scroll':scroll,'scan':scan,'manifest_url':manifest_url,'metadata':metas,'urls':urls,'existing_presence_chunks':len(pairs),'listing_pages':pages,'selection':'lowest eight SHA256(vesuvius-e1:+key)','cases':cases,'files':records}
+          results=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as p:
+              futures={p.submit(one,item):item[0] for item in roots.items()}
+              for f in concurrent.futures.as_completed(futures):
+                  try:results.append(f.result())
+                  except Exception as e:results.append({'scroll':futures[f],'error':str(e)})
+          (out/'manifest.json').write_text(json.dumps(results,indent=2))
+          print(json.dumps([{k:v for k,v in r.items() if k not in ['files','cases']} for r in results],indent=2))
+          if any('error' in r for r in results):raise RuntimeError('acquisition errors retained in manifest')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: four-scroll-fiber-fixtures
+          path: fiber_fixtures/
+          retention-days: 14
