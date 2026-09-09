@@ -1,0 +1,61 @@
+name: Public surface patch acquisition
+on:
+  push:
+    paths: ['.github/workflows/patch-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Stream directory and download predetermined patch sample
+        shell: bash
+        run: |
+          mkdir -p patches
+          python - <<'PY'
+          import urllib.request, json, hashlib, pathlib, re, heapq, concurrent.futures, datetime
+          root=pathlib.Path('patches');base='https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/verified_patches/'
+          manifest={'retrieved_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'selection':'lowest 48 SHA256(vesuvius-2026-09-09: + directory_name_with_slash)','files':[]}
+          heap=[];n=0;size=0;digest=hashlib.sha256();buf=b''
+          with urllib.request.urlopen(base,timeout=60) as response:
+              while True:
+                  chunk=response.read(1_000_000)
+                  if not chunk:break
+                  size+=len(chunk)
+                  if size>150_000_000:raise ValueError('directory exceeds bounded 150 MB')
+                  digest.update(chunk);buf+=chunk
+                  lines=buf.split(b'\n');buf=lines.pop()
+                  for line in lines:
+                      for raw in re.findall(rb'href="([^"]+/)"',line):
+                          name=raw.decode()
+                          if name.startswith(('../','/','http')):continue
+                          n+=1;score=int(hashlib.sha256(('vesuvius-2026-09-09:'+name).encode()).hexdigest(),16)
+                          heapq.heappush(heap,(-score,name))
+                          if len(heap)>48:heapq.heappop(heap)
+          chosen=[v for _,v in sorted(heap,reverse=True)];manifest.update(directory_url=base,directory_bytes=size,directory_sha256=digest.hexdigest(),directory_count=n,selected=chosen)
+          def get(rel):
+              entry={'path':rel,'url':base+rel}
+              try:
+                  with urllib.request.urlopen(base+rel,timeout=45) as response:raw=response.read(8_000_001)
+                  if len(raw)>8_000_000:raise ValueError('file exceeds 8 MB bound')
+                  p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw)
+                  entry.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+              except Exception as exc:entry['error']=repr(exc)
+              manifest['files'].append(entry)
+          for ix,name in enumerate(chosen):
+              raw=urllib.request.urlopen(base+name,timeout=45).read(500_000)
+              files=re.findall(r'href="([^"]+)"',raw.decode())
+              targets=[name+x for x in files if not x.startswith(('../','/','http')) and x.lower().endswith(('.tif','.tiff','.json'))]
+              with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:list(ex.map(get,targets))
+              print(ix,name,targets,flush=True)
+          (root/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          print('SUMMARY',n,'directories',len(manifest['files']),'files',sum(x.get('bytes',0) for x in manifest['files']),'bytes',flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: real-surface-patches
+          path: patches/
+          retention-days: 7
+          if-no-files-found: error
