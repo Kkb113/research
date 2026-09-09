@@ -1,0 +1,44 @@
+name: Public prediction catalog
+on:
+  push:
+    paths: ['.github/workflows/source-catalog.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read public catalog and spiral scan metadata
+        run: |
+          python - <<'PY'
+          import urllib.request,pathlib,json,re,hashlib,concurrent.futures
+          root=pathlib.Path('catalog');root.mkdir()
+          manifest=[]
+          def get(name,url):
+              try:
+                  with urllib.request.urlopen(url,timeout=40) as r:b=r.read(10000001)
+                  if len(b)>10000000:raise ValueError('cap')
+                  p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+                  manifest.append({'path':name,'url':url,'sha256':hashlib.sha256(b).hexdigest()})
+                  return b
+              except Exception as e:
+                  manifest.append({'path':name,'url':url,'error':str(e)});return b''
+          s3='https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/'
+          get('metadata.json',s3+'metadata.json');get('LICENSE.txt',s3+'LICENSE.txt')
+          base='https://dl.ash2txt.org/datasets/spiral_datasets/'
+          index=get('root.html',base).decode()
+          scrolls=re.findall(r'href="(PHerc[^/]+/)"',index)
+          def one(s):
+              b=get(s+'index.html',base+s).decode()
+              for scan in re.findall(r'href="([0-9]{14}/)"',b):
+                  get(s+scan+'index.html',base+s+scan)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as p:list(p.map(one,scrolls))
+          (root/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-catalog
+          path: catalog/
+          retention-days: 14
