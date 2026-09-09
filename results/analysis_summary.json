@@ -1,0 +1,213 @@
+{
+  "surface": {
+    "ivar_vs_random": {
+      "baseline_mean": 10.735150458108084,
+      "ivar_mean": 7.4204301409773965,
+      "reduction_percent": 30.877259988723615,
+      "spatial_bootstrap_95": [
+        28.747153313242293,
+        33.005953802768985
+      ],
+      "patch_wins": 40,
+      "n_patches": 40,
+      "n_clusters": 30
+    },
+    "ivar_vs_coverage": {
+      "baseline_mean": 7.448819979240743,
+      "ivar_mean": 7.4204301409773965,
+      "reduction_percent": 0.38113202282330505,
+      "spatial_bootstrap_95": [
+        -5.47845211452691,
+        5.575143207205172
+      ],
+      "patch_wins": 18,
+      "n_patches": 40,
+      "n_clusters": 30
+    },
+    "ivar_vs_variance": {
+      "baseline_mean": 7.5656932747468435,
+      "ivar_mean": 7.4204301409773965,
+      "reduction_percent": 1.9200240942137237,
+      "spatial_bootstrap_95": [
+        -3.2418152312873514,
+        6.241447190358733
+      ],
+      "patch_wins": 21,
+      "n_patches": 40,
+      "n_clusters": 30
+    }
+  },
+  "spanning_pairs": {
+    "mean_split_rmse": {
+      "random": 1.8387593346798774,
+      "chronological": 2.0944556706286503,
+      "coverage": 2.011715951904545,
+      "information": 1.3322400734905515,
+      "ivar": 1.3462072494512474,
+      "longest": 1.465392175532319,
+      "span_matched_random": 1.419049042491327
+    },
+    "comparisons": {
+      "ivar_vs_random": {
+        "baseline_mean_split_rmse": 1.8387593346798774,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": 26.78719699412876,
+        "conditional_spatial_bootstrap_95": [
+          19.23250346645347,
+          33.392437863535854
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      },
+      "ivar_vs_chronological": {
+        "baseline_mean_split_rmse": 2.0944556706286503,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": 35.72519732312197,
+        "conditional_spatial_bootstrap_95": [
+          25.949957034546998,
+          44.83313193801929
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      },
+      "ivar_vs_coverage": {
+        "baseline_mean_split_rmse": 2.0117159519045447,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": 33.08164364970326,
+        "conditional_spatial_bootstrap_95": [
+          23.860113967041922,
+          40.64331919560866
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      },
+      "ivar_vs_information": {
+        "baseline_mean_split_rmse": 1.3322400734905515,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": -1.0483978254835824,
+        "conditional_spatial_bootstrap_95": [
+          -2.519389313237551,
+          0.7167508227872211
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      },
+      "ivar_vs_longest": {
+        "baseline_mean_split_rmse": 1.465392175532319,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": 8.133312574688512,
+        "conditional_spatial_bootstrap_95": [
+          0.5311312333810154,
+          16.09207721370987
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      },
+      "ivar_vs_span_matched_random": {
+        "baseline_mean_split_rmse": 1.420736446469364,
+        "ivar_mean_split_rmse": 1.3462072494512474,
+        "reduction_percent": 5.245814394592829,
+        "conditional_spatial_bootstrap_95": [
+          1.131716376547558,
+          10.52896378698878
+        ],
+        "valid_resamples": 10000,
+        "n_clusters": 32,
+        "n_splits": 40
+      }
+    },
+    "note": "For repeated span-matched random controls, the bootstrap pools MSE before RMSE; mean_split_rmse averages individual RMSE. These estimands differ slightly."
+  },
+  "spatial_pairs": {
+    "mean_split_rmse": {
+      "random": 2.1505703219702705,
+      "chronological": 2.356186952379465,
+      "coverage": 2.2402571208893414,
+      "information": 1.8528695275255873,
+      "ivar": 1.8554591538449832,
+      "longest": 2.052992684921869,
+      "span_matched_random": 1.961323389087101
+    },
+    "comparisons": {
+      "ivar_vs_random": {
+        "baseline_mean_split_rmse": 2.1505703219702705,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": 13.722460740317398,
+        "conditional_spatial_bootstrap_95": [
+          8.687253236592802,
+          19.138891190958375
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      },
+      "ivar_vs_chronological": {
+        "baseline_mean_split_rmse": 2.3561869523794656,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": 21.251615795122202,
+        "conditional_spatial_bootstrap_95": [
+          16.13048049287956,
+          28.88774992529639
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      },
+      "ivar_vs_coverage": {
+        "baseline_mean_split_rmse": 2.240257120889342,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": 17.176509046943732,
+        "conditional_spatial_bootstrap_95": [
+          12.438195677403833,
+          22.642011763573564
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      },
+      "ivar_vs_information": {
+        "baseline_mean_split_rmse": 1.8528695275255873,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": -0.1397630152002005,
+        "conditional_spatial_bootstrap_95": [
+          -0.7494520467163834,
+          0.6645897890741054
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      },
+      "ivar_vs_longest": {
+        "baseline_mean_split_rmse": 2.052992684921869,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": 9.621735748386461,
+        "conditional_spatial_bootstrap_95": [
+          4.765258040511009,
+          15.615312508517274
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      },
+      "ivar_vs_span_matched_random": {
+        "baseline_mean_split_rmse": 1.9649271190546034,
+        "ivar_mean_split_rmse": 1.8554591538449827,
+        "reduction_percent": 5.571095444104291,
+        "conditional_spatial_bootstrap_95": [
+          2.9151566896222847,
+          9.1404964425453
+        ],
+        "valid_resamples": 9993,
+        "n_clusters": 32,
+        "n_splits": 20
+      }
+    },
+    "note": "For repeated span-matched random controls, the bootstrap pools MSE before RMSE; mean_split_rmse averages individual RMSE. These estimands differ slightly."
+  },
+  "warning": "One scroll; fixed fitted models; correlated replay splits; no independent-scroll or human-time generalization is established."
+}

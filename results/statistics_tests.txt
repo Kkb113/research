@@ -1,0 +1,23 @@
+test_block_update_direct_inverse (__main__.AlgebraTests.test_block_update_direct_inverse) ... ok
+test_covariance_decrease_psd (__main__.AlgebraTests.test_covariance_decrease_psd) ... ok
+test_helmert_centering_per_point_error (__main__.AlgebraTests.test_helmert_centering_per_point_error) ... ok
+test_information_gain_direct_logdet (__main__.AlgebraTests.test_information_gain_direct_logdet) ... ok
+test_risk_theory_not_realized_error_guarantee (__main__.AlgebraTests.test_risk_theory_not_realized_error_guarantee) ... ok
+test_weighted_risk_gain_direct (__main__.AlgebraTests.test_weighted_risk_gain_direct) ... ok
+test_group_counts_and_nonempty (__main__.DataTests.test_group_counts_and_nonempty) ... ok
+test_saved_splits_disjoint_and_acquisitions_legal (__main__.DataTests.test_saved_splits_disjoint_and_acquisitions_legal) ... ok
+test_source_hashes (__main__.DataTests.test_source_hashes) ... ok
+test_test_values_and_geometry_do_not_change_selection_design (__main__.DataTests.test_test_values_and_geometry_do_not_change_selection_design) ... ok
+test_acquisition_trajectory_label_blind (__main__.PairTests.test_acquisition_trajectory_label_blind) ... ok
+test_all_downloaded_patch_hashes (__main__.PairTests.test_all_downloaded_patch_hashes) ... ok
+test_disjoint_pair_endpoints_and_no_test_queries (__main__.PairTests.test_disjoint_pair_endpoints_and_no_test_queries) ... ok
+test_scalar_pair_update_matches_block (__main__.PairTests.test_scalar_pair_update_matches_block) ... ok
+test_ivar_maximizes_one_step_trace_decrease (__main__.SurfaceTests.test_ivar_maximizes_one_step_trace_decrease) ... ok
+test_selection_independent_of_test_locations (__main__.SurfaceTests.test_selection_independent_of_test_locations) ... ok
+test_selection_label_blind (__main__.SurfaceTests.test_selection_label_blind) ... ok
+test_sequential_prediction_matches_cholesky (__main__.SurfaceTests.test_sequential_prediction_matches_cholesky) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.577s
+
+OK
