@@ -1,0 +1,70 @@
+name: Public Vesuvius geometry audit
+on:
+  push:
+    paths:
+      - '.github/workflows/geometry-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Bounded acquisition of geometry and metadata
+        shell: bash
+        run: |
+          mkdir -p geometry
+          python - <<'PY'
+          import urllib.request, urllib.parse, json, hashlib, pathlib, re, datetime, concurrent.futures
+          root=pathlib.Path('geometry'); base='https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/'
+          entries=[]
+          def get(rel,limit=8000000):
+              url=base+rel
+              try:
+                  with urllib.request.urlopen(url,timeout=45) as response:
+                      raw=response.read(limit+1)
+                  if len(raw)>limit: raise ValueError('size limit')
+                  p=root/rel
+                  if rel.endswith('/'): p=p/'index.html'
+                  p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw)
+                  entries.append({'path':rel,'url':url,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
+                  return raw
+              except Exception as exc:
+                  entries.append({'path':rel,'url':url,'error':repr(exc)})
+                  return b''
+          def links(raw):
+              return [x for x in re.findall(r'href="([^"]+)"',raw.decode()) if not x.startswith(('../','/','?','http'))]
+          for folder in ['eval_fibers/','verified_patches/','winding_model/']:
+              raw=get(folder,20000000); ls=links(raw)
+              print('DIRECTORY',folder,'N',len(ls),'EXAMPLE',ls[:20],flush=True)
+              if folder=='verified_patches/':
+                  choices=sorted([x for x in ls if x.endswith('/')],key=lambda x:hashlib.sha256(('vesuvius-2026-09-09:'+x).encode()).hexdigest())[:24]
+                  for item in choices:
+                      sub=folder+item; files=links(get(sub))
+                      targets=[sub+f for f in files if not f.endswith('/') and f.lower().endswith(('.tif','.tiff','.json'))]
+                      with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex: list(ex.map(get,targets))
+                  print('PATCH_SELECTION',choices,flush=True)
+              elif folder=='eval_fibers/':
+                  targets=[folder+x for x in ls if not x.endswith('/') and x.endswith('.json')][:80]
+                  with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex: list(ex.map(get,targets))
+                  for sub in [x for x in ls if x.endswith('/')][:4]: get(folder+sub)
+              else:
+                  for sub in [x for x in ls if x.endswith('/')][:2]: get(folder+sub)
+          (root/'manifest.json').write_text(json.dumps({'retrieved_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':entries},indent=2))
+          print('TOTAL_BYTES',sum(e.get('bytes',0) for e in entries),'FILES',len(entries),flush=True)
+          PY
+      - name: Pin public upstream source for reproducibility
+        shell: bash
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/ScrollPrize/villa.git upstream
+          cd upstream
+          git sparse-checkout set spiral-fitting
+          git rev-parse HEAD > ../geometry/upstream_sha.txt
+          cp -r spiral-fitting ../geometry/upstream
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-geometry-audit
+          path: geometry/
+          retention-days: 7
+          if-no-files-found: error
