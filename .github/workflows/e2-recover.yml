@@ -1,0 +1,50 @@
+name: Recover E2 research inputs
+on:
+  push:
+    paths: ['.github/workflows/e2-recover.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Collect existing public research artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import os,json,urllib.request,pathlib,zipfile,io,hashlib
+          out=pathlib.Path('recovery');out.mkdir()
+          root='https://api.github.com/repos/Kkb113/research'
+          def get(url):
+            req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+            with urllib.request.urlopen(req,timeout=90) as r:return r.read()
+          arts=json.loads(get(root+'/actions/artifacts?per_page=100'))['artifacts']
+          (out/'artifact_inventory.json').write_text(json.dumps(arts,indent=2))
+          records=[]
+          for a in arts:
+            if a['expired'] or not any(k in a['name'].lower() for k in ('fiber','codec','evidence-inventory','source-catalog')):continue
+            if a['size_in_bytes']>80_000_000:continue
+            b=get(a['archive_download_url']);p=out/(a['name']+'.zip');p.write_bytes(b)
+            records.append({'name':a['name'],'id':a['id'],'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)})
+          (out/'recovery.json').write_text(json.dumps(records,indent=2))
+          with zipfile.ZipFile(out/'repo_snapshot.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in pathlib.Path('.').rglob('*'):
+              if p.is_file() and '.git' not in p.parts and 'recovery' not in p.parts and p.stat().st_size<1_000_000:z.write(p,str(p))
+          print(json.dumps(records,indent=2))
+          PY
+      - name: Bootstrap pinned decompressor for the offline sandbox
+        run: python -m pip download --only-binary=:all: --no-deps numcodecs==0.16.5 -d recovery/wheels
+      - uses: actions/upload-artifact@v4
+        with:
+          name: e2-recovered-inputs
+          path: recovery/
+          include-hidden-files: true
+          retention-days: 30
