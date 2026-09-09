@@ -1,0 +1,49 @@
+{
+  "protocol_commit": "63fe419288d8cc79b1af120a707c2ec3bed2dee5",
+  "upstream_commit": "4accc199a55695ebbefaab4fb6a99faa800fcabf",
+  "external_source_commit": "a2c04034a4ddb46ebf84b0e8a2ea286ee8c4eb2a",
+  "external_run": 34353180786,
+  "installation_run": 34355041165,
+  "review_issue": "https://github.com/ScrollPrize/villa/issues/1746",
+  "source_files_verified": 112,
+  "selection_cases": 31,
+  "selection_configuration_comparisons": 2480,
+  "all_selection_comparisons_exact": true,
+  "saved_primary_records": 134994,
+  "selected_arrays_identical_across_machines": 155,
+  "stage_output_volumes_identical_across_machines": 4,
+  "writer_workload_method_hash_sets_identical_across_machines": 6,
+  "unit_tests_passed": 9,
+  "scalar_oracle_cases_in_unit_test": 480,
+  "local": {
+    "block_wins_vs_upstream": 28,
+    "block_wins_vs_sparse": 23,
+    "equal_scroll_geometric_speedup_vs_upstream": 2.5240659929902733,
+    "equal_scroll_geometric_speedup_vs_sparse": 1.6996534374697698,
+    "conditional_four_scroll_bootstrap_95_vs_upstream": [2.093204648901147, 3.043615033204928],
+    "conditional_four_scroll_bootstrap_95_vs_sparse": [1.2848472355164249, 2.2483776496134866],
+    "large_writer_records": 17279232,
+    "concatenate_peak_process_mib": 386.6328125,
+    "stream_peak_process_mib": 97.05078125
+  },
+  "external": {
+    "block_wins_vs_upstream": 28,
+    "block_wins_vs_sparse": 23,
+    "equal_scroll_geometric_speedup_vs_upstream": 2.512449134980309,
+    "equal_scroll_geometric_speedup_vs_sparse": 1.6951928435386212,
+    "conditional_four_scroll_bootstrap_95_vs_upstream": [2.045993046646177, 3.085250297507456],
+    "conditional_four_scroll_bootstrap_95_vs_sparse": [1.258180130308429, 2.283996311466233],
+    "large_writer_records": 17279232,
+    "concatenate_peak_process_mib": 330.9765625,
+    "stream_peak_process_mib": 39.08984375,
+    "concatenate_seconds": 17.009729290999985,
+    "stream_seconds": 17.188207342
+  },
+  "caveats": [
+    "Bootstrap is post-hoc descriptive over only four fixed per-volume effects; it is not a general population guarantee.",
+    "Writer stress repeats real batches, not independent regions.",
+    "Use corrected Linux VmHWM fields; original ru_maxrss fields are retained but invalid for comparisons.",
+    "Stage wall times use local HTTP mirror, not full-volume public-network throughput.",
+    "No full GPU optimizer, human-time study, improved geometry, repaired switch, ink, or award is established."
+  ]
+}
