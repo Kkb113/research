@@ -1,0 +1,50 @@
+name: E2 final reproducibility review
+on:
+  push:
+    paths: ['.github/workflows/e2-review.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned CPU dependencies and preserve offline codec wheel
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install numpy==2.3.5 numcodecs==0.16.5 requests==2.32.5
+          mkdir -p e2_review
+          python -m pip download --only-binary=:all: --no-deps numcodecs==0.16.5 -d e2_review/wheels
+      - name: Reacquire hash-pinned real inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/acquire_e2.py --data e2_review/data | tee e2_review/acquisition.txt
+          git archive HEAD -o e2_review/repository.zip
+          git rev-parse HEAD > e2_review/commit.txt
+          python -m pip freeze > e2_review/environment.txt
+      - name: Adversarial review and frozen real-data comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -v 2>&1 | tee e2_review/tests.txt
+          python scripts/validate_selection.py --fixtures e2_review/data --upstream e2_review/data/upstream_fiber_direction_samples.py --out e2_review/results | tee e2_review/selection.log
+          python scripts/validate_stage.py --fixtures e2_review/data --upstream e2_review/data/upstream_fiber_direction_samples.py --out e2_review/results/stage | tee e2_review/stage.log
+          python scripts/validate_resources.py --fixtures e2_review/data --upstream e2_review/data/upstream_fiber_direction_samples.py --results e2_review/results | tee e2_review/resources.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2-final-review
+          path: e2_review/
+          include-hidden-files: true
+          retention-days: 30
