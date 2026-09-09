@@ -1,0 +1,58 @@
+name: Audit statistics from pinned public sources
+on:
+  push:
+    paths: ['.github/workflows/audit-statistics.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - run: python -m pip install -r requirements.txt
+      - name: Reacquire pinned public data without expiring acquisition artifacts
+        run: python src/acquire.py --root .
+      - name: Reproduce analysis from complete archived external outputs
+        run: python src/analyze.py > results/statistics_audit.log
+      - name: Validate numerical and leakage tests
+        shell: bash
+        run: |
+          set -o pipefail
+          python src/test_research.py 2>&1 | tee results/statistics_tests.txt
+          python - <<'PY'
+          import json,numpy as np,pathlib
+          s=json.loads(pathlib.Path('results/analysis_summary.json').read_text())
+          checks=[
+            (s['surface']['ivar_vs_random']['reduction_percent'],30.87725998872395),
+            (s['surface']['ivar_vs_coverage']['reduction_percent'],0.38113202282334946),
+            (s['spanning_pairs']['comparisons']['ivar_vs_random']['reduction_percent'],26.787196994127815),
+            (s['spatial_pairs']['comparisons']['ivar_vs_random']['reduction_percent'],13.72246074031912)
+          ]
+          assert all(np.isclose(a,b,rtol=1e-7,atol=1e-7) for a,b in checks),checks
+          print('All four independent aggregate analysis checks passed')
+          PY
+      - name: Preserve analysis audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add results/analysis_summary.json results/statistics_tests.txt
+          git diff --cached --quiet || git commit -m 'Verify direct-source reacquisition and statistical analysis on external CPU'
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: statistics-audit
+          path: |
+            src/analyze.py
+            results/analysis_summary.json
+            results/statistics_tests.txt
+            results/statistics_audit.log
+          retention-days: 30
